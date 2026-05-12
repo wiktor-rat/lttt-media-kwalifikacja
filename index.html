@@ -9,7 +9,7 @@
   <meta name="description" content="Uruchamiamy kampanie Meta Ads i lejki sprzedażowe dla biur nieruchomości. Średnio 3–8 umów na wyłączność miesięcznie. Sprawdź, czy możemy Ci pomóc." />
   <meta property="og:title" content="LTTT MEDIA — System pozyskiwania umów na wyłączność" />
   <meta property="og:description" content="Kampanie Meta Ads + lejki sprzedażowe dla biur nieruchomości w Polsce. 50+ aktywnych biur." />
-  <!-- TODO: Uzupełnij ścieżkę do zdjęcia OG -->
+  <!-- TODO: Uzupełnij ścieżkę do zdjęcia OG (1200x630px) -->
   <meta property="og:image" content="/og-image.jpg" />
   <meta property="og:type" content="website" />
   <meta name="robots" content="index, follow" />
@@ -27,10 +27,10 @@
         extend: {
           colors: {
             brand: {
-              dark:    '#1a1a2e',
-              darker:  '#12121f',
-              mid:     '#16213e',
-              accent:  '#e8b84b',   /* złoty akcent */
+              dark:    '#0d1b3e',
+              darker:  '#071020',
+              mid:     '#0f2547',
+              accent:  '#1d7fe8',   /* elektryczny niebieski — kolor marki LTTT MEDIA */
               light:   '#f8f9fa',
             }
           },
@@ -43,10 +43,8 @@
   </script>
 
   <style>
-    /* Smooth scroll globalnie */
     html { scroll-behavior: smooth; }
 
-    /* Animacje wejścia (IntersectionObserver) */
     .fade-in-section {
       opacity: 0;
       transform: translateY(28px);
@@ -57,18 +55,16 @@
       transform: translateY(0);
     }
 
-    /* Strzałki między kartami kroków */
     .step-arrow::after {
       content: '→';
       font-size: 1.5rem;
-      color: #e8b84b;
+      color: #1d7fe8;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
 
-    /* Accordion */
     .accordion-content {
       max-height: 0;
       overflow: hidden;
@@ -78,20 +74,13 @@
       max-height: 300px;
     }
 
-    /* Sticky nav shadow */
-    #navbar {
-      transition: box-shadow 0.3s;
-    }
-    #navbar.scrolled {
-      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
-    }
+    #navbar { transition: box-shadow 0.3s; }
+    #navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
 
-    /* Walidacja — czerwona ramka */
-    input.invalid, select.invalid, textarea.invalid {
+    input.invalid, select.invalid {
       border-color: #ef4444 !important;
     }
 
-    /* YouTube placeholder aspect ratio */
     .yt-wrapper {
       position: relative;
       padding-bottom: 56.25%;
@@ -105,34 +94,46 @@
       width: 100%; height: 100%;
       border: 0;
     }
+
+    /* Pulsujący punkt na pasku pilności */
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .pulse-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
   </style>
 </head>
 
 <body class="font-sans bg-white text-gray-900 antialiased">
 
   <!-- ============================================================
+       PASEK PILNOŚCI (nad navbarem)
+  ============================================================ -->
+  <div class="bg-brand-accent text-white text-sm font-semibold text-center py-2.5 px-4">
+    <span class="pulse-dot inline-block w-2 h-2 rounded-full bg-white mr-2 align-middle"></span>
+    Przyjmujemy maks. 3 nowe biura miesięcznie — w tym miesiącu zostały jeszcze wolne miejsca
+  </div>
+
+  <!-- ============================================================
        STICKY NAVBAR
   ============================================================ -->
-  <nav id="navbar" class="fixed top-0 inset-x-0 z-50 bg-brand-dark/95 backdrop-blur-sm">
+  <nav id="navbar" class="sticky top-0 inset-x-0 z-50 bg-brand-dark/97 backdrop-blur-sm">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-2 select-none">
-        <span class="text-brand-accent font-black text-xl tracking-tight">LTTT</span>
-        <span class="text-white font-bold text-xl tracking-tight">MEDIA</span>
+      <a href="#" class="flex flex-col select-none leading-tight">
+        <span class="text-white font-black text-lg tracking-widest">LTTT MEDIA</span>
+        <span class="text-brand-accent text-xs font-semibold tracking-widest uppercase">Lead To The Top</span>
       </a>
 
-      <!-- Desktop CTA -->
       <a
         href="#formularz"
-        class="hidden sm:inline-flex items-center gap-1 bg-brand-accent hover:bg-amber-400 text-brand-dark font-bold text-sm px-5 py-2.5 rounded-lg transition-colors duration-200"
+        class="hidden sm:inline-flex items-center bg-brand-accent hover:bg-blue-500 text-white font-bold text-sm px-5 py-2.5 rounded-lg transition-colors duration-200"
       >
-        Sprawdź, czy możemy Ci pomóc&nbsp;→
+        Sprawdź wolne miejsce →
       </a>
 
-      <!-- Mobile CTA -->
       <a
         href="#formularz"
-        class="sm:hidden inline-flex items-center bg-brand-accent hover:bg-amber-400 text-brand-dark font-bold text-sm px-4 py-2 rounded-lg transition-colors duration-200"
+        class="sm:hidden inline-flex items-center bg-brand-accent hover:bg-blue-500 text-white font-bold text-sm px-4 py-2 rounded-lg transition-colors duration-200"
       >
         Formularz →
       </a>
@@ -143,19 +144,19 @@
   <!-- ============================================================
        1. HERO
   ============================================================ -->
-  <section
-    id="hero"
-    class="bg-brand-dark min-h-screen flex items-center pt-16"
-  >
+  <section id="hero" class="bg-brand-dark min-h-[90vh] flex items-center">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-      <!-- H1 -->
+
+      <div class="inline-flex items-center gap-2 bg-brand-accent/15 border border-brand-accent/30 text-brand-accent text-sm font-semibold px-4 py-2 rounded-full mb-8">
+        <span>50+ biur nieruchomości w Polsce</span>
+      </div>
+
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6">
         Pozyskuj umowy na wyłączność<br class="hidden md:block" />
         <span class="text-brand-accent">bez cold calli</span> —<br class="hidden md:block" />
         sprawdzony system dla biur nieruchomości
       </h1>
 
-      <!-- Subheadline -->
       <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
         Uruchamiamy kampanie Meta Ads + lejki sprzedażowe, które co miesiąc dostarczają właścicieli chcących sprzedać nieruchomość — prosto do Twojego biura.
       </p>
@@ -174,17 +175,18 @@
         <span class="hidden sm:block mx-4 text-gray-600 font-bold">·</span>
         <span class="flex items-center gap-1.5">
           <span class="text-green-400 font-bold">✓</span>
-          Bez długoterminowych umów
+          Współpraca na 3 miesiące — odnawialna
         </span>
       </div>
 
-      <!-- CTA Button -->
       <a
         href="#formularz"
-        class="inline-flex items-center gap-2 bg-brand-accent hover:bg-amber-400 text-brand-dark font-black text-lg px-8 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-amber-500/20"
+        class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-lg px-8 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
       >
         Sprawdź, czy możemy Ci pomóc&nbsp;→
       </a>
+
+      <p class="mt-4 text-gray-500 text-sm">Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.</p>
     </div>
   </section>
 
@@ -194,45 +196,54 @@
   ============================================================ -->
   <section id="problem" class="bg-white py-20 fade-in-section">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section heading -->
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
           Czy to brzmi znajomo?
         </h2>
-        <p class="text-gray-500 text-lg">Większość biur nieruchomości boryka się z tymi samymi problemami.</p>
+        <p class="text-gray-500 text-lg">Jeśli tak — wiesz, że czas to zmienić.</p>
       </div>
 
-      <!-- Problem cards -->
       <div class="grid sm:grid-cols-2 gap-5">
 
         <div class="flex items-start gap-4 bg-red-50 border border-red-100 rounded-2xl p-6">
           <span class="text-red-500 text-2xl font-black flex-shrink-0 leading-none mt-0.5">✗</span>
-          <p class="text-gray-800 font-medium text-base leading-relaxed">
-            Każdy miesiąc zaczynam od zera — nie wiem, ilu klientów przyjdzie
-          </p>
+          <div>
+            <p class="text-gray-900 font-bold text-base mb-1">Każdy miesiąc zaczynam od zera</p>
+            <p class="text-gray-600 text-sm">Nie wiem, ilu klientów przyjdzie — i nie mogę tego zaplanować.</p>
+          </div>
         </div>
 
         <div class="flex items-start gap-4 bg-red-50 border border-red-100 rounded-2xl p-6">
           <span class="text-red-500 text-2xl font-black flex-shrink-0 leading-none mt-0.5">✗</span>
-          <p class="text-gray-800 font-medium text-base leading-relaxed">
-            Zimne telefony kosztują czas agentów i dają coraz gorsze efekty
-          </p>
+          <div>
+            <p class="text-gray-900 font-bold text-base mb-1">Cold calling pożera czas agentów</p>
+            <p class="text-gray-600 text-sm">Efekty są coraz gorsze, a ludzie są coraz bardziej odporni na zimne telefony.</p>
+          </div>
         </div>
 
         <div class="flex items-start gap-4 bg-red-50 border border-red-100 rounded-2xl p-6">
           <span class="text-red-500 text-2xl font-black flex-shrink-0 leading-none mt-0.5">✗</span>
-          <p class="text-gray-800 font-medium text-base leading-relaxed">
-            Reklamy próbowałem — wydałem i nic z tego nie wyszło
-          </p>
+          <div>
+            <p class="text-gray-900 font-bold text-base mb-1">Próbowałem reklam — przepaliłem kasę</p>
+            <p class="text-gray-600 text-sm">Wydałem budżet i nic z tego nie wyszło. Problem tkwi w systemie, nie w budżecie.</p>
+          </div>
         </div>
 
         <div class="flex items-start gap-4 bg-red-50 border border-red-100 rounded-2xl p-6">
           <span class="text-red-500 text-2xl font-black flex-shrink-0 leading-none mt-0.5">✗</span>
-          <p class="text-gray-800 font-medium text-base leading-relaxed">
-            Polecenia działają, ale nie mogę na nich budować firmy
-          </p>
+          <div>
+            <p class="text-gray-900 font-bold text-base mb-1">Polecenia działają, ale to loteria</p>
+            <p class="text-gray-600 text-sm">Nie da się zbudować skalowalnego biura na przypadkowych rekomendacjach.</p>
+          </div>
         </div>
 
+      </div>
+
+      <!-- Most do rozwiązania -->
+      <div class="mt-10 text-center">
+        <a href="#rozwiazanie" class="inline-flex items-center gap-2 text-brand-accent font-bold hover:underline text-base">
+          Zobacz jak to rozwiązujemy ↓
+        </a>
       </div>
     </div>
   </section>
@@ -243,62 +254,60 @@
   ============================================================ -->
   <section id="rozwiazanie" class="bg-brand-dark py-20 fade-in-section">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Heading -->
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
           System, nie przypadek
         </h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Trzy kroki, które zamieniają obcych właścicieli nieruchomości w podpisane umowy na wyłączność.</p>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Trzy kroki, które zamieniają obcych właścicieli nieruchomości w podpisane umowy na wyłączność — co miesiąc, przewidywalnie.</p>
       </div>
 
-      <!-- Steps -->
       <div class="flex flex-col md:flex-row items-stretch gap-6 md:gap-0">
 
-        <!-- Step 1 -->
         <div class="flex-1 bg-brand-mid border border-white/10 rounded-2xl p-8 flex flex-col gap-4">
           <div class="w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center flex-shrink-0">
-            <span class="text-brand-dark font-black text-xl">1</span>
+            <span class="text-white font-black text-xl">1</span>
           </div>
           <h3 class="text-white font-bold text-xl">Kampania Meta</h3>
           <p class="text-gray-400 text-base leading-relaxed">
-            Docieramy do właścicieli chcących sprzedać nieruchomość w Twojej okolicy — precyzyjne targetowanie, sprawdzone kreacje.
+            Docieramy do właścicieli chcących sprzedać nieruchomość w Twojej okolicy — precyzyjne targetowanie, sprawdzone kreacje reklamowe.
           </p>
         </div>
 
-        <!-- Arrow desktop -->
         <div class="hidden md:flex items-center px-4 step-arrow flex-shrink-0"></div>
-
-        <!-- Arrow mobile -->
         <div class="flex md:hidden justify-center text-brand-accent text-2xl">↓</div>
 
-        <!-- Step 2 -->
         <div class="flex-1 bg-brand-mid border border-white/10 rounded-2xl p-8 flex flex-col gap-4">
           <div class="w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center flex-shrink-0">
-            <span class="text-brand-dark font-black text-xl">2</span>
+            <span class="text-white font-black text-xl">2</span>
           </div>
           <h3 class="text-white font-bold text-xl">Kwalifikacja leada</h3>
           <p class="text-gray-400 text-base leading-relaxed">
-            System filtruje i podgrzewa kontakty — do Ciebie trafiają tylko gotowi, zmotywowani właściciele.
+            System filtruje i podgrzewa kontakty — do Ciebie trafiają tylko gotowi, zmotywowani właściciele nieruchomości.
           </p>
         </div>
 
-        <!-- Arrow desktop -->
         <div class="hidden md:flex items-center px-4 step-arrow flex-shrink-0"></div>
-
-        <!-- Arrow mobile -->
         <div class="flex md:hidden justify-center text-brand-accent text-2xl">↓</div>
 
-        <!-- Step 3 -->
         <div class="flex-1 bg-brand-mid border border-white/10 rounded-2xl p-8 flex flex-col gap-4">
           <div class="w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center flex-shrink-0">
-            <span class="text-brand-dark font-black text-xl">3</span>
+            <span class="text-white font-black text-xl">3</span>
           </div>
           <h3 class="text-white font-bold text-xl">Umowa na wyłączność</h3>
           <p class="text-gray-400 text-base leading-relaxed">
-            Twój agent zamyka spotkanie — mamy gotowy skrypt i wsparcie sprzedażowe, które zwiększa skuteczność.
+            Twój agent zamyka spotkanie — mamy gotowy skrypt i wsparcie sprzedażowe, które realnie zwiększa skuteczność.
           </p>
         </div>
 
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href="#formularz"
+          class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-base px-7 py-3.5 rounded-xl transition-colors duration-200"
+        >
+          Chcę taki system w moim biurze →
+        </a>
       </div>
     </div>
   </section>
@@ -309,7 +318,6 @@
   ============================================================ -->
   <section id="wyniki" class="bg-gray-50 py-20 fade-in-section">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Heading -->
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
           Wyniki mówią same za siebie
@@ -317,8 +325,6 @@
         <p class="text-gray-500 text-lg">Posłuchaj, co mówią właściciele biur, którzy już korzystają z naszego systemu.</p>
       </div>
 
-      <!-- YouTube embeds -->
-      <!-- TODO: Zastąp VIDEO_ID_1, VIDEO_ID_2, VIDEO_ID_3 prawdziwymi ID filmów z YouTube -->
       <div class="grid md:grid-cols-3 gap-6 mb-14">
 
         <div>
@@ -356,36 +362,36 @@
 
       </div>
 
-      <!-- Opinie tekstowe -->
-      <!-- TODO: Uzupełnij imię, nazwisko i biuro dla każdej opinii -->
       <div class="grid md:grid-cols-2 gap-6">
 
         <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm flex flex-col gap-4">
+          <div class="flex gap-1 text-yellow-400 text-lg">★★★★★</div>
           <p class="text-gray-700 text-base leading-relaxed italic">
-            „Zdecydowanie polecamy współpracę z LTTT Media! To świetnie zorganizowany zespół specjalistów, w pełni skoncentrowany na rozwiązaniach. Pełni energii i pozytywnego nastawienia, co realnie przekłada się na osiągane rezultaty. Skupiają się na celach i potrzebach Klientów, wykazując przy tym ogromną cierpliwość i wyrozumiałość — cechy dziś naprawdę rzadko spotykane. Skuteczność oraz wysoka jakość obsługi klienta to ich najmocniejsze strony."
+            „Zdecydowanie polecamy współpracę z LTTT Media! To świetnie zorganizowany zespół specjalistów, w pełni skoncentrowany na rozwiązaniach. Skupiają się na celach i potrzebach Klientów, wykazując ogromną cierpliwość i wyrozumiałość. Skuteczność oraz wysoka jakość obsługi klienta to ich najmocniejsze strony."
           </p>
-          <div class="flex items-center gap-3 mt-auto">
+          <div class="flex items-center gap-3 mt-auto pt-2 border-t border-gray-100">
             <div class="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
               RI
             </div>
             <div>
               <p class="font-bold text-gray-900 text-sm">Biuro Nieruchomości RE/MAX Impact</p>
-              <p class="text-gray-500 text-sm">⭐⭐⭐⭐⭐ — opinia Google</p>
+              <p class="text-gray-400 text-xs">Opinia Google Maps</p>
             </div>
           </div>
         </div>
 
         <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm flex flex-col gap-4">
+          <div class="flex gap-1 text-yellow-400 text-lg">★★★★★</div>
           <p class="text-gray-700 text-base leading-relaxed italic">
-            „Długo zastanawiałem się co napisać o współpracy z LTTT MEDIA.. I w sumie wypada napisać samą prawdę! Dzięki współpracy przez 1 miesiąc mam pracy na kilka miesięcy, LTTT Media pozyskało dla mnie ponad 60 leadów od klientów chętnych do współpracy w zakresie sprzedaży swoich nieruchomości. Wyniki kampanii przerosły moje oczekiwania wielokrotnie — ze 100% pewnością polecam Firmę Wiktora Rataja! 6 gwiazdek na 5 możliwych!"
+            „Dzięki współpracy przez 1 miesiąc mam pracy na kilka miesięcy — LTTT Media pozyskało dla mnie ponad 60 leadów od klientów chętnych do sprzedaży swoich nieruchomości. Wyniki kampanii przerosły moje oczekiwania wielokrotnie. Ze 100% pewnością polecam! 6 gwiazdek na 5 możliwych!"
           </p>
-          <div class="flex items-center gap-3 mt-auto">
+          <div class="flex items-center gap-3 mt-auto pt-2 border-t border-gray-100">
             <div class="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
               AB
             </div>
             <div>
               <p class="font-bold text-gray-900 text-sm">Artur Buchowicz</p>
-              <p class="text-gray-500 text-sm">⭐⭐⭐⭐⭐ — opinia Google</p>
+              <p class="text-gray-400 text-xs">Opinia Google Maps</p>
             </div>
           </div>
         </div>
@@ -400,7 +406,15 @@
   ============================================================ -->
   <section id="formularz" class="bg-brand-dark py-20 fade-in-section">
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Heading -->
+
+      <!-- Urgency badge -->
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 bg-red-500/15 border border-red-500/30 text-red-400 text-sm font-semibold px-4 py-2 rounded-full">
+          <span class="pulse-dot inline-block w-2 h-2 rounded-full bg-red-400"></span>
+          Zostało kilka wolnych miejsc w tym miesiącu
+        </div>
+      </div>
+
       <div class="text-center mb-10">
         <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
           Sprawdź, czy możemy Ci pomóc
@@ -411,7 +425,6 @@
         </p>
       </div>
 
-      <!-- Form -->
       <div id="form-wrapper">
         <form id="contact-form" novalidate class="space-y-5">
 
@@ -429,6 +442,22 @@
               class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
             />
             <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz imię i nazwisko.</p>
+          </div>
+
+          <!-- Nazwa biura -->
+          <div>
+            <label for="officeName" class="block text-sm font-semibold text-gray-300 mb-1.5">
+              Nazwa biura nieruchomości <span class="text-brand-accent">*</span>
+            </label>
+            <input
+              type="text"
+              id="officeName"
+              name="officeName"
+              autocomplete="organization"
+              placeholder="np. Biuro Nieruchomości XYZ"
+              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
+            />
+            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz nazwę biura.</p>
           </div>
 
           <!-- Miasto / region -->
@@ -489,7 +518,7 @@
               name="agentCount"
               class="w-full bg-brand-mid border border-white/15 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors appearance-none cursor-pointer"
             >
-              <option value="" disabled selected class="text-gray-500">Wybierz opcję</option>
+              <option value="" disabled selected>Wybierz opcję</option>
               <option value="1">1</option>
               <option value="2-5">2–5</option>
               <option value="6-15">6–15</option>
@@ -498,37 +527,36 @@
             <p class="error-msg text-red-400 text-sm mt-1 hidden">Wybierz liczbę agentów.</p>
           </div>
 
-          <!-- Źródła pozyskiwania (checkboxes) -->
+          <!-- Źródła pozyskiwania -->
           <div>
             <p class="block text-sm font-semibold text-gray-300 mb-3">
               Skąd teraz pozyskujesz klientów? <span class="text-gray-500 font-normal">(możesz zaznaczyć kilka)</span>
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              <!-- Each checkbox shares the same name so FormData collects all selected -->
               <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors">
-                <input type="checkbox" name="sources" value="Polecenia" class="accent-brand-accent w-4 h-4 flex-shrink-0" />
+                <input type="checkbox" name="sources" value="Polecenia" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
                 <span class="text-gray-300 text-sm">Polecenia</span>
               </label>
               <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors">
-                <input type="checkbox" name="sources" value="Cold calling" class="accent-brand-accent w-4 h-4 flex-shrink-0" />
+                <input type="checkbox" name="sources" value="Cold calling" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
                 <span class="text-gray-300 text-sm">Cold calling</span>
               </label>
               <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors">
-                <input type="checkbox" name="sources" value="Reklamy online" class="accent-brand-accent w-4 h-4 flex-shrink-0" />
+                <input type="checkbox" name="sources" value="Reklamy online" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
                 <span class="text-gray-300 text-sm">Reklamy online</span>
               </label>
               <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors">
-                <input type="checkbox" name="sources" value="Portale ogłoszeniowe" class="accent-brand-accent w-4 h-4 flex-shrink-0" />
+                <input type="checkbox" name="sources" value="Portale ogłoszeniowe" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
                 <span class="text-gray-300 text-sm">Portale ogłoszeniowe</span>
               </label>
               <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors sm:col-span-2">
-                <input type="checkbox" name="sources" value="Inne" class="accent-brand-accent w-4 h-4 flex-shrink-0" />
+                <input type="checkbox" name="sources" value="Inne" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
                 <span class="text-gray-300 text-sm">Inne</span>
               </label>
             </div>
           </div>
 
-          <!-- Cel — umowy miesięcznie -->
+          <!-- Cel miesięczny -->
           <div>
             <label for="contractGoal" class="block text-sm font-semibold text-gray-300 mb-1.5">
               Ile umów na wyłączność chcesz pozyskiwać miesięcznie?
@@ -538,7 +566,7 @@
               name="contractGoal"
               class="w-full bg-brand-mid border border-white/15 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors appearance-none cursor-pointer"
             >
-              <option value="" disabled selected class="text-gray-500">Wybierz opcję</option>
+              <option value="" disabled selected>Wybierz opcję</option>
               <option value="1-2">1–2</option>
               <option value="3-5">3–5</option>
               <option value="6-10">6–10</option>
@@ -550,7 +578,7 @@
           <button
             type="submit"
             id="submit-btn"
-            class="w-full bg-brand-accent hover:bg-amber-400 text-brand-dark font-black text-lg py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-amber-500/10 mt-2"
+            class="w-full bg-brand-accent hover:bg-blue-500 text-white font-black text-lg py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/20 mt-2"
           >
             Sprawdź, czy możemy Ci pomóc →
           </button>
@@ -561,7 +589,6 @@
         </form>
       </div>
 
-      <!-- Sukces — pokazywany po wysłaniu -->
       <div id="form-success" class="hidden text-center py-12">
         <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
           <span class="text-green-400 text-3xl">✓</span>
@@ -577,27 +604,22 @@
 
 
   <!-- ============================================================
-       6. FAQ — ACCORDION
+       6. FAQ
   ============================================================ -->
   <section id="faq" class="bg-white py-20 fade-in-section">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Heading -->
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
           Najczęstsze pytania
         </h2>
       </div>
 
-      <!-- Accordion items -->
       <div class="space-y-3" id="faq-list">
 
         <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
-          <button
-            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
-            aria-expanded="false"
-          >
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
             <span>Ile to kosztuje?</span>
-            <span class="accordion-icon text-brand-accent text-xl font-black transition-transform duration-300 flex-shrink-0 ml-4">+</span>
+            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
           </button>
           <div class="accordion-content">
             <p class="px-6 pb-5 text-gray-600 leading-relaxed">
@@ -607,12 +629,9 @@
         </div>
 
         <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
-          <button
-            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
-            aria-expanded="false"
-          >
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
             <span>Czy to działa w moim mieście?</span>
-            <span class="accordion-icon text-brand-accent text-xl font-black transition-transform duration-300 flex-shrink-0 ml-4">+</span>
+            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
           </button>
           <div class="accordion-content">
             <p class="px-6 pb-5 text-gray-600 leading-relaxed">
@@ -622,12 +641,9 @@
         </div>
 
         <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
-          <button
-            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
-            aria-expanded="false"
-          >
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
             <span>Co jeśli kampania nie przyniesie efektów?</span>
-            <span class="accordion-icon text-brand-accent text-xl font-black transition-transform duration-300 flex-shrink-0 ml-4">+</span>
+            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
           </button>
           <div class="accordion-content">
             <p class="px-6 pb-5 text-gray-600 leading-relaxed">
@@ -637,12 +653,9 @@
         </div>
 
         <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
-          <button
-            class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
-            aria-expanded="false"
-          >
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
             <span>Jak długo trwa wdrożenie?</span>
-            <span class="accordion-icon text-brand-accent text-xl font-black transition-transform duration-300 flex-shrink-0 ml-4">+</span>
+            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
           </button>
           <div class="accordion-content">
             <p class="px-6 pb-5 text-gray-600 leading-relaxed">
@@ -651,6 +664,27 @@
           </div>
         </div>
 
+        <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
+            <span>Na jak długo podpisujemy umowę?</span>
+            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-5 text-gray-600 leading-relaxed">
+              Współpracujemy na umowach 3-miesięcznych, które automatycznie się przedłużają. Zależy nam na wynikach, a nie na wiązaniu Cię długoterminowym kontraktem — jeśli system nie działa, możemy zakończyć po każdym okresie rozliczeniowym.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 text-center">
+        <a
+          href="#formularz"
+          class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-base px-7 py-3.5 rounded-xl transition-colors duration-200"
+        >
+          Zostaw dane — oddzwonimy →
+        </a>
       </div>
     </div>
   </section>
@@ -663,61 +697,43 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
 
-        <!-- Logo + tagline -->
         <div class="text-center md:text-left">
-          <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
-            <span class="text-brand-accent font-black text-2xl tracking-tight">LTTT</span>
-            <span class="text-white font-bold text-2xl tracking-tight">MEDIA</span>
+          <div class="flex flex-col mb-2">
+            <span class="text-white font-black text-xl tracking-widest">LTTT MEDIA</span>
+            <span class="text-brand-accent text-xs font-semibold tracking-widest uppercase">Lead To The Top</span>
           </div>
           <p class="text-gray-500 text-sm">Lead To The Top Sp. z o.o.</p>
+          <p class="text-gray-600 text-xs mt-1">Plac Bankowy 2, 00-095 Warszawa</p>
         </div>
 
-        <!-- Contact -->
         <div class="text-center md:text-left">
-          <p class="text-gray-300 font-semibold mb-1">Kontakt</p>
+          <p class="text-gray-300 font-semibold mb-2">Kontakt</p>
           <a href="tel:511205230" class="block text-gray-400 hover:text-white transition-colors text-sm mb-1">
             📞 511 205 230
           </a>
-          <!-- TODO: Uzupełnij adres email -->
           <a href="mailto:kontakt@ltttmedia.pl" class="block text-gray-400 hover:text-white transition-colors text-sm">
             ✉️ kontakt@ltttmedia.pl
           </a>
         </div>
 
-        <!-- Social icons -->
         <div class="flex items-center gap-4">
-          <a
-            href="https://www.instagram.com/ltttmedia/"
-            target="_blank" rel="noopener"
-            aria-label="Instagram LTTT MEDIA"
-            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-accent/20 flex items-center justify-center transition-colors group"
-          >
-            <!-- Instagram SVG icon -->
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-accent transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <a href="https://www.instagram.com/ltttmedia/" target="_blank" rel="noopener" aria-label="Instagram LTTT MEDIA"
+            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-accent/20 flex items-center justify-center transition-colors group">
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
           </a>
 
-          <a
-            href="https://www.facebook.com/profile.php?id=61555868486029"
-            target="_blank" rel="noopener"
-            aria-label="Facebook LTTT MEDIA"
-            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-accent/20 flex items-center justify-center transition-colors group"
-          >
-            <!-- Facebook SVG icon -->
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-accent transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <a href="https://www.facebook.com/profile.php?id=61555868486029" target="_blank" rel="noopener" aria-label="Facebook LTTT MEDIA"
+            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-accent/20 flex items-center justify-center transition-colors group">
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
           </a>
 
-          <a
-            href="https://www.youtube.com/@LTTTMEDIA"
-            target="_blank" rel="noopener"
-            aria-label="YouTube LTTT MEDIA"
-            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-accent/20 flex items-center justify-center transition-colors group"
-          >
-            <!-- YouTube SVG icon -->
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-accent transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <a href="https://www.youtube.com/@LTTTMEDIA" target="_blank" rel="noopener" aria-label="YouTube LTTT MEDIA"
+            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-accent/20 flex items-center justify-center transition-colors group">
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
           </a>
@@ -725,7 +741,6 @@
 
       </div>
 
-      <!-- Bottom bar -->
       <div class="border-t border-white/5 mt-10 pt-6 text-center">
         <p class="text-gray-600 text-sm">
           © 2026 LTTT MEDIA | Lead To The Top Sp. z o.o.
@@ -739,86 +754,61 @@
        JAVASCRIPT
   ============================================================ -->
   <script>
-    // ---- Navbar scrolled state ----
+    // ---- Navbar scrolled shadow ----
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
 
-
-    // ---- IntersectionObserver — fade-in sections ----
-    const fadeSections = document.querySelectorAll('.fade-in-section');
+    // ---- IntersectionObserver — fade-in ----
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      }),
       { threshold: 0.12 }
     );
-    fadeSections.forEach(el => observer.observe(el));
-
+    document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
 
     // ---- FAQ Accordion ----
     document.querySelectorAll('.accordion-trigger').forEach(trigger => {
       trigger.addEventListener('click', () => {
-        const item    = trigger.closest('.accordion-item');
-        const content = item.querySelector('.accordion-content');
+        const content = trigger.closest('.accordion-item').querySelector('.accordion-content');
         const icon    = trigger.querySelector('.accordion-icon');
         const isOpen  = content.classList.contains('open');
 
-        // Close all
         document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
         document.querySelectorAll('.accordion-trigger').forEach(t => {
           t.setAttribute('aria-expanded', 'false');
           t.querySelector('.accordion-icon').textContent = '+';
-          t.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
         });
 
-        // Open clicked (if it wasn't already open)
         if (!isOpen) {
           content.classList.add('open');
           trigger.setAttribute('aria-expanded', 'true');
           icon.textContent = '×';
-          icon.style.transform = 'rotate(0deg)';
         }
       });
     });
 
-
-    // ---- Form validation & submission ----
+    // ---- Form ----
     const form        = document.getElementById('contact-form');
     const formWrapper = document.getElementById('form-wrapper');
     const formSuccess = document.getElementById('form-success');
 
-    // Polish phone: 9 digits (spaces/dashes ignored), optionally starting with +48
     function isValidPolishPhone(val) {
-      const cleaned = val.replace(/[\s\-]/g, '');
-      return /^(\+48)?[0-9]{9}$/.test(cleaned);
+      return /^(\+48)?[0-9]{9}$/.test(val.replace(/[\s\-]/g, ''));
     }
-
     function isValidEmail(val) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
     }
-
     function showError(field, show) {
-      const wrapper  = field.closest('div');
-      const errorMsg = wrapper.querySelector('.error-msg');
-      if (show) {
-        field.classList.add('invalid');
-        if (errorMsg) errorMsg.classList.remove('hidden');
-      } else {
-        field.classList.remove('invalid');
-        if (errorMsg) errorMsg.classList.add('hidden');
-      }
+      const msg = field.closest('div').querySelector('.error-msg');
+      field.classList.toggle('invalid', show);
+      if (msg) msg.classList.toggle('hidden', !show);
     }
 
-    // Clear error on user input
     form.querySelectorAll('input, select').forEach(el => {
-      el.addEventListener('input', () => showError(el, false));
+      el.addEventListener('input',  () => showError(el, false));
       el.addEventListener('change', () => showError(el, false));
     });
 
@@ -826,25 +816,27 @@
       e.preventDefault();
       let valid = true;
 
-      const fullName     = document.getElementById('fullName');
-      const city         = document.getElementById('city');
-      const phone        = document.getElementById('phone');
-      const email        = document.getElementById('email');
-      const agentCount   = document.getElementById('agentCount');
+      const fullName   = document.getElementById('fullName');
+      const officeName = document.getElementById('officeName');
+      const city       = document.getElementById('city');
+      const phone      = document.getElementById('phone');
+      const email      = document.getElementById('email');
+      const agentCount = document.getElementById('agentCount');
 
-      if (!fullName.value.trim()) { showError(fullName, true);   valid = false; }
-      if (!city.value.trim())     { showError(city, true);       valid = false; }
-      if (!isValidPolishPhone(phone.value)) { showError(phone, true);  valid = false; }
-      if (!isValidEmail(email.value))       { showError(email, true);  valid = false; }
-      if (!agentCount.value)      { showError(agentCount, true); valid = false; }
+      if (!fullName.value.trim())          { showError(fullName, true);   valid = false; }
+      if (!officeName.value.trim())        { showError(officeName, true); valid = false; }
+      if (!city.value.trim())              { showError(city, true);       valid = false; }
+      if (!isValidPolishPhone(phone.value)){ showError(phone, true);      valid = false; }
+      if (!isValidEmail(email.value))      { showError(email, true);      valid = false; }
+      if (!agentCount.value)               { showError(agentCount, true); valid = false; }
 
       if (!valid) return;
 
-      // Collect checkbox values
       const sources = [...form.querySelectorAll('input[name="sources"]:checked')].map(cb => cb.value);
 
       const payload = {
         fullName:     fullName.value.trim(),
+        officeName:   officeName.value.trim(),
         city:         city.value.trim(),
         phone:        phone.value.trim(),
         email:        email.value.trim(),
@@ -861,14 +853,12 @@
       btn.textContent = 'Wysyłanie…';
 
       try {
-        // Attempt POST — silently succeed if endpoint is not yet configured
         await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
-        }).catch(() => {}); // ignore network errors until backend is wired up
+        }).catch(() => {});
       } finally {
-        // Always show success message
         formWrapper.classList.add('hidden');
         formSuccess.classList.remove('hidden');
       }
