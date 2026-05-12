@@ -845,19 +845,17 @@
         contractGoal: document.getElementById('contractGoal').value,
       };
 
-      // TODO: Podłącz endpoint /api/contact do backendu (CRM, webhook, email)
-      console.log('[LTTT MEDIA] Formularz kwalifikacyjny:', payload);
-
       const btn = document.getElementById('submit-btn');
       btn.disabled = true;
       btn.textContent = 'Wysyłanie…';
 
       try {
-        await fetch('/api/contact', {
+        await fetch('https://hooks.zapier.com/hooks/catch/19282604/4ygqjo0/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
-        }).catch(() => {});
+        });
+      } catch (_) {
+        // webhook błąd nie blokuje UX
       } finally {
         formWrapper.classList.add('hidden');
         formSuccess.classList.remove('hidden');
