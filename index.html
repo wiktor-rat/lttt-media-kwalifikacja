@@ -852,7 +852,9 @@
       try {
         await fetch('https://hooks.zapier.com/hooks/catch/19282604/4ygqjo0/', {
           method: 'POST',
-          body: JSON.stringify(payload),
+          body: new URLSearchParams(Object.entries(payload).map(([k, v]) =>
+            [k, Array.isArray(v) ? v.join(', ') : v]
+          )),
         });
       } catch (_) {
         // webhook błąd nie blokuje UX
