@@ -613,8 +613,7 @@
         </div>
         <h3 class="text-white font-black text-2xl mb-3">Dziękujemy!</h3>
         <p class="text-gray-400 text-lg leading-relaxed">
-          Oddzwonimy do Ciebie w ciągu 24 godzin roboczych.<br />
-          Sprawdź skrzynkę email — wyślemy też potwierdzenie.
+          Oddzwonimy w ciągu 15 minut.
         </p>
       </div>
     </div>
@@ -853,14 +852,13 @@
       const sources = [...form.querySelectorAll('input[name="sources"]:checked')].map(cb => cb.value);
 
       const payload = {
-        fullName:     fullName.value.trim(),
-        officeName:   officeName.value.trim(),
-        city:         city.value.trim(),
-        phone:        phone.value.trim(),
-        email:        email.value.trim(),
-        agentCount:   agentCount.value,
-        sources,
-        contractGoal: document.getElementById('contractGoal').value,
+        first_name:        fullName.value.trim().split(' ')[0],
+        phone:             phone.value.trim(),
+        email:             email.value.trim(),
+        city:              city.value.trim(),
+        agents_count:      agentCount.value,
+        lead_source:       sources.join(', '),
+        desired_contracts: document.getElementById('contractGoal').value,
       };
 
       const btn = document.getElementById('submit-btn');
@@ -868,11 +866,10 @@
       btn.textContent = 'Wysyłanie…';
 
       try {
-        await fetch('https://hooks.zapier.com/hooks/catch/19282604/4ygqjo0/', {
+        await fetch('https://services.leadconnectorhq.com/hooks/7hpPSc5SQgIWDCqEHtgF/webhook-trigger/7bb12249-77a3-41c9-b9da-770b11a0e238', {
           method: 'POST',
-          body: new URLSearchParams(Object.entries(payload).map(([k, v]) =>
-            [k, Array.isArray(v) ? v.join(', ') : v]
-          )),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
         });
         if (typeof fbq === 'function') fbq('track', 'Lead');
       } catch (_) {
