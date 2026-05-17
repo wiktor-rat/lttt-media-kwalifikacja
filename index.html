@@ -876,12 +876,19 @@
       btn.textContent = 'Wysyłanie…';
 
       try {
-        const res = await fetch('https://services.leadconnectorhq.com/hooks/7hpPSc5SQgIWDCqEHtgF/webhook-trigger/7d9116c4-d499-42b8-a05f-975f13d02982', {
+        const ghl = fetch('https://services.leadconnectorhq.com/hooks/7hpPSc5SQgIWDCqEHtgF/webhook-trigger/7d9116c4-d499-42b8-a05f-975f13d02982', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         });
-        if (!res.ok) throw new Error('bad response');
+        const zapier = fetch('https://hooks.zapier.com/hooks/catch/19282604/4ygqjo0/', {
+          method: 'POST',
+          body: new URLSearchParams(Object.entries(payload).map(([k, v]) =>
+            [k, Array.isArray(v) ? v.join(', ') : v]
+          )),
+        });
+        const [ghlRes] = await Promise.all([ghl, zapier]);
+        if (!ghlRes.ok) throw new Error('bad response');
         if (typeof fbq === 'function') fbq('track', 'Lead');
         formWrapper.classList.add('hidden');
         formSuccess.classList.remove('hidden');
