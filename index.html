@@ -875,18 +875,19 @@
       btn.disabled = true;
       btn.textContent = 'Wysyłanie…';
 
+      const formParams = new URLSearchParams(Object.entries(payload).map(([k, v]) =>
+        [k, Array.isArray(v) ? v.join(', ') : v]
+      ));
+
       try {
         await Promise.allSettled([
           fetch('https://services.leadconnectorhq.com/hooks/7hpPSc5SQgIWDCqEHtgF/webhook-trigger/7d9116c4-d499-42b8-a05f-975f13d02982', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
+            body: formParams,
           }),
           fetch('https://hooks.zapier.com/hooks/catch/19282604/4ygqjo0/', {
             method: 'POST',
-            body: new URLSearchParams(Object.entries(payload).map(([k, v]) =>
-              [k, Array.isArray(v) ? v.join(', ') : v]
-            )),
+            body: formParams,
           }),
         ]);
         if (typeof fbq === 'function') fbq('track', 'Lead');
