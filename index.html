@@ -42,8 +42,14 @@
     }
   </script>
 
+  <script>
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname + window.location.search);
+    }
+  </script>
+
   <style>
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: auto; }
 
     .fade-in-section {
       opacity: 0;
@@ -786,6 +792,17 @@
       history.replaceState(null, null, window.location.pathname + window.location.search);
     }
     window.scrollTo(0, 0);
+
+    // Smooth scroll tylko dla kliknięć w linki z hashem
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
 
     // ---- Navbar scrolled shadow ----
     const navbar = document.getElementById('navbar');
