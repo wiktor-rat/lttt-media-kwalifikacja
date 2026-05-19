@@ -781,6 +781,12 @@
        JAVASCRIPT
   ============================================================ -->
   <script>
+    // Zawsze zaczynaj od góry — usuń hash z URL przy załadowaniu
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname + window.location.search);
+    }
+    window.scrollTo(0, 0);
+
     // ---- Navbar scrolled shadow ----
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
