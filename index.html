@@ -42,6 +42,7 @@
     }
   </script>
 
+  <style id="init-no-scroll">html { overflow: hidden !important; }</style>
   <script>
     if (window.location.hash) {
       history.replaceState(null, null, window.location.pathname + window.location.search);
@@ -920,6 +921,13 @@
         formWrapper.classList.add('hidden');
         document.getElementById('form-error').classList.remove('hidden');
       }
+    });
+
+    // Odblokuj scroll i wróć na górę po załadowaniu strony
+    window.addEventListener('load', () => {
+      window.scrollTo(0, 0);
+      const el = document.getElementById('init-no-scroll');
+      if (el) el.remove();
     });
   </script>
 
