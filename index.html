@@ -44,6 +44,7 @@
 
   <style id="init-no-scroll">html { overflow: hidden !important; }</style>
   <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     if (window.location.hash) {
       history.replaceState(null, null, window.location.pathname + window.location.search);
     }
