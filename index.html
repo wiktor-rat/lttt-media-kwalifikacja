@@ -137,7 +137,7 @@
   ============================================================ -->
   <div class="bg-brand-accent text-white text-sm font-semibold text-center py-2.5 px-4">
     <span class="pulse-dot inline-block w-2 h-2 rounded-full bg-white mr-2 align-middle"></span>
-    Przyjmujemy maks. 5 nowych biur miesięcznie — w tym miesiącu zostały jeszcze wolne miejsca
+    Przyjmujemy maks. 5 nowych biur miesięcznie — weryfikujemy rynek przed startem
   </div>
 
   <!-- ============================================================
@@ -218,7 +218,111 @@
 
 
   <!-- ============================================================
-       2. PROBLEM
+       2. FORMULARZ KWALIFIKACYJNY
+  ============================================================ -->
+  <section id="formularz" class="bg-brand-dark py-20 fade-in-section">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
+          Sprawdź, czy możemy Ci pomóc — zajmuje 30 sekund
+        </h2>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.
+        </p>
+      </div>
+
+      <div id="form-wrapper">
+        <form id="contact-form" novalidate class="space-y-5">
+
+          <!-- Imię i nazwisko -->
+          <div>
+            <label for="fullName" class="block text-sm font-semibold text-gray-300 mb-1.5">
+              Imię i nazwisko <span class="text-brand-accent">*</span>
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              autocomplete="name"
+              placeholder="Jan Kowalski"
+              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
+            />
+            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz imię i nazwisko.</p>
+          </div>
+
+          <!-- Numer telefonu -->
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-gray-300 mb-1.5">
+              Numer telefonu <span class="text-brand-accent">*</span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="np. 500 100 200"
+              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
+            />
+            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny polski numer telefonu (9 cyfr).</p>
+          </div>
+
+          <!-- Miasto / region -->
+          <div>
+            <label for="city" class="block text-sm font-semibold text-gray-300 mb-1.5">
+              Miasto / region <span class="text-brand-accent">*</span>
+            </label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              autocomplete="address-level2"
+              placeholder="np. Warszawa, Mazowsze"
+              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
+            />
+            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz miasto lub region.</p>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full bg-brand-accent hover:bg-blue-500 text-white font-black text-lg py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/20 mt-2"
+          >
+            Sprawdź wolne miejsce →
+          </button>
+
+          <p class="text-center text-gray-500 text-sm">
+            Przesyłając formularz, wyrażasz zgodę na kontakt telefoniczny w celu omówienia współpracy.
+          </p>
+        </form>
+      </div>
+
+      <div id="form-success" class="hidden text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
+          <span class="text-green-400 text-3xl">✓</span>
+        </div>
+        <h3 class="text-white font-black text-2xl mb-3">Dziękujemy!</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Oddzwonimy w ciągu 15 minut.
+        </p>
+      </div>
+
+      <div id="form-error" class="hidden text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-6">
+          <span class="text-red-400 text-3xl">✕</span>
+        </div>
+        <h3 class="text-white font-black text-2xl mb-3">Coś poszło nie tak.</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Zadzwoń do nas: <a href="tel:511205230" class="text-brand-accent font-bold">511 205 230</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       3. PROBLEM
   ============================================================ -->
   <section id="problem" class="bg-white py-20 fade-in-section">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -276,7 +380,7 @@
 
 
   <!-- ============================================================
-       3. ROZWIĄZANIE — 3 kroki
+       4. ROZWIĄZANIE — 3 kroki
   ============================================================ -->
   <section id="rozwiazanie" class="bg-brand-dark py-20 fade-in-section">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -340,7 +444,7 @@
 
 
   <!-- ============================================================
-       4. SOCIAL PROOF — filmy + opinie
+       5. SOCIAL PROOF — filmy + opinie
   ============================================================ -->
   <section id="wyniki" class="bg-gray-50 py-20 fade-in-section">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -354,35 +458,29 @@
       <div class="grid md:grid-cols-3 gap-6 mb-14">
 
         <div>
-          <div class="yt-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/9SzxkG5YioY"
-              title="Opinia klienta LTTT MEDIA 1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+          <div class="yt-wrapper yt-lazy" data-videoid="9SzxkG5YioY" style="cursor:pointer;">
+            <img src="https://img.youtube.com/vi/9SzxkG5YioY/hqdefault.jpg" alt="Opinia klienta" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" />
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
         </div>
 
         <div>
-          <div class="yt-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/Zzghsi8MwtU"
-              title="Opinia klienta LTTT MEDIA 2"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+          <div class="yt-wrapper yt-lazy" data-videoid="Zzghsi8MwtU" style="cursor:pointer;">
+            <img src="https://img.youtube.com/vi/Zzghsi8MwtU/hqdefault.jpg" alt="Opinia klienta" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" />
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
         </div>
 
         <div>
-          <div class="yt-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/_yhVZ27_udU"
-              title="Opinia klienta LTTT MEDIA 3"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+          <div class="yt-wrapper yt-lazy" data-videoid="_yhVZ27_udU" style="cursor:pointer;">
+            <img src="https://img.youtube.com/vi/_yhVZ27_udU/hqdefault.jpg" alt="Opinia klienta" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" />
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
         </div>
 
@@ -422,217 +520,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       5. FORMULARZ KWALIFIKACYJNY
-  ============================================================ -->
-  <section id="formularz" class="bg-brand-dark py-20 fade-in-section">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Urgency badge -->
-      <div class="flex justify-center mb-6">
-        <div class="inline-flex items-center gap-2 bg-red-500/15 border border-red-500/30 text-red-400 text-sm font-semibold px-4 py-2 rounded-full">
-          <span class="pulse-dot inline-block w-2 h-2 rounded-full bg-red-400"></span>
-          Zostały już tylko 2 wolne miejsca w tym miesiącu
-        </div>
-      </div>
-
-      <div class="text-center mb-10">
-        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-          Sprawdź, czy możemy Ci pomóc
-        </h2>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Wypełnij formularz — oddzwonimy w ciągu 24h i sprawdzimy,<br class="hidden sm:block" />
-          czy nasz system pasuje do Twojego biura.
-        </p>
-      </div>
-
-      <div id="form-wrapper">
-        <form id="contact-form" novalidate class="space-y-5">
-
-          <!-- Imię i nazwisko -->
-          <div>
-            <label for="fullName" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Imię i nazwisko <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              autocomplete="name"
-              placeholder="Jan Kowalski"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz imię i nazwisko.</p>
-          </div>
-
-          <!-- Nazwa biura -->
-          <div>
-            <label for="officeName" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Nazwa biura nieruchomości <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="text"
-              id="officeName"
-              name="officeName"
-              autocomplete="organization"
-              placeholder="np. Biuro Nieruchomości XYZ"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz nazwę biura.</p>
-          </div>
-
-          <!-- Miasto / region -->
-          <div>
-            <label for="city" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Miasto / region <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="text"
-              id="city"
-              name="city"
-              autocomplete="address-level2"
-              placeholder="np. Warszawa, Mazowsze"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz miasto lub region.</p>
-          </div>
-
-          <!-- Numer telefonu -->
-          <div>
-            <label for="phone" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Numer telefonu <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              autocomplete="tel"
-              placeholder="np. 500 100 200"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny polski numer telefonu (9 cyfr).</p>
-          </div>
-
-          <!-- Email -->
-          <div>
-            <label for="email" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Adres email <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              autocomplete="email"
-              placeholder="jan@biuro.pl"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny adres email.</p>
-          </div>
-
-          <!-- Liczba agentów -->
-          <div>
-            <label for="agentCount" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Ilu agentów masz w biurze? <span class="text-brand-accent">*</span>
-            </label>
-            <select
-              id="agentCount"
-              name="agentCount"
-              class="w-full bg-brand-mid border border-white/15 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors appearance-none cursor-pointer"
-            >
-              <option value="" disabled selected>Wybierz opcję</option>
-              <option value="1">1</option>
-              <option value="2-5">2–5</option>
-              <option value="6-15">6–15</option>
-              <option value="16+">16+</option>
-            </select>
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wybierz liczbę agentów.</p>
-          </div>
-
-          <!-- Źródła pozyskiwania -->
-          <div>
-            <p class="block text-sm font-semibold text-gray-300 mb-3">
-              Skąd teraz pozyskujesz klientów? <span class="text-gray-500 font-normal">(możesz zaznaczyć kilka)</span>
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors">
-                <input type="checkbox" name="sources" value="Polecenia" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
-                <span class="text-gray-300 text-sm">Polecenia</span>
-              </label>
-              <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors">
-                <input type="checkbox" name="sources" value="Cold calling" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
-                <span class="text-gray-300 text-sm">Cold calling</span>
-              </label>
-              <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors">
-                <input type="checkbox" name="sources" value="Reklamy online" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
-                <span class="text-gray-300 text-sm">Reklamy online</span>
-              </label>
-              <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors">
-                <input type="checkbox" name="sources" value="Portale ogłoszeniowe" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
-                <span class="text-gray-300 text-sm">Portale ogłoszeniowe</span>
-              </label>
-              <label class="flex items-center gap-3 bg-brand-mid border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-brand-accent/50 transition-colors sm:col-span-2">
-                <input type="checkbox" name="sources" value="Inne" class="accent-blue-500 w-4 h-4 flex-shrink-0" />
-                <span class="text-gray-300 text-sm">Inne</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Cel miesięczny -->
-          <div>
-            <label for="contractGoal" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Ile umów na wyłączność chcesz pozyskiwać miesięcznie?
-            </label>
-            <select
-              id="contractGoal"
-              name="contractGoal"
-              class="w-full bg-brand-mid border border-white/15 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors appearance-none cursor-pointer"
-            >
-              <option value="" disabled selected>Wybierz opcję</option>
-              <option value="1-2">1–2</option>
-              <option value="3-5">3–5</option>
-              <option value="6-10">6–10</option>
-              <option value="10+">10+</option>
-            </select>
-          </div>
-
-          <!-- Submit -->
-          <button
-            type="submit"
-            id="submit-btn"
-            class="w-full bg-brand-accent hover:bg-blue-500 text-white font-black text-lg py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/20 mt-2"
-          >
-            Sprawdź, czy możemy Ci pomóc →
-          </button>
-
-          <p class="text-center text-gray-500 text-sm">
-            Przesyłając formularz, wyrażasz zgodę na kontakt telefoniczny w celu omówienia współpracy.
-          </p>
-        </form>
-      </div>
-
-      <div id="form-success" class="hidden text-center py-12">
-        <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
-          <span class="text-green-400 text-3xl">✓</span>
-        </div>
-        <h3 class="text-white font-black text-2xl mb-3">Dziękujemy!</h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Oddzwonimy w ciągu 15 minut.
-        </p>
-      </div>
-
-      <div id="form-error" class="hidden text-center py-12">
-        <div class="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-6">
-          <span class="text-red-400 text-3xl">✕</span>
-        </div>
-        <h3 class="text-white font-black text-2xl mb-3">Coś poszło nie tak.</h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Zadzwoń do nas: <a href="tel:511205230" class="text-brand-accent font-bold">511 205 230</a>
-        </p>
       </div>
     </div>
   </section>
@@ -715,7 +602,7 @@
 
       <div class="mt-10 text-center">
         <a
-          href="#formularz"
+          href="#formularz-bottom"
           class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-base px-7 py-3.5 rounded-xl transition-colors duration-200"
         >
           Zostaw dane — oddzwonimy →
@@ -726,7 +613,111 @@
 
 
   <!-- ============================================================
-       7. FOOTER
+       7. POWTÓRZONY FORMULARZ (dół strony) + CTA
+  ============================================================ -->
+  <section id="formularz-bottom" class="bg-brand-dark py-20 fade-in-section">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
+          Sprawdź, czy możemy Ci pomóc — zajmuje 30 sekund
+        </h2>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.
+        </p>
+      </div>
+
+      <div id="form-bottom-wrapper">
+        <form id="contact-form-bottom" novalidate class="space-y-5">
+
+          <!-- Imię i nazwisko -->
+          <div>
+            <label for="fullName2" class="block text-sm font-semibold text-gray-300 mb-1.5">
+              Imię i nazwisko <span class="text-brand-accent">*</span>
+            </label>
+            <input
+              type="text"
+              id="fullName2"
+              name="fullName"
+              autocomplete="name"
+              placeholder="Jan Kowalski"
+              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
+            />
+            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz imię i nazwisko.</p>
+          </div>
+
+          <!-- Numer telefonu -->
+          <div>
+            <label for="phone2" class="block text-sm font-semibold text-gray-300 mb-1.5">
+              Numer telefonu <span class="text-brand-accent">*</span>
+            </label>
+            <input
+              type="tel"
+              id="phone2"
+              name="phone"
+              autocomplete="tel"
+              placeholder="np. 500 100 200"
+              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
+            />
+            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny polski numer telefonu (9 cyfr).</p>
+          </div>
+
+          <!-- Miasto / region -->
+          <div>
+            <label for="city2" class="block text-sm font-semibold text-gray-300 mb-1.5">
+              Miasto / region <span class="text-brand-accent">*</span>
+            </label>
+            <input
+              type="text"
+              id="city2"
+              name="city"
+              autocomplete="address-level2"
+              placeholder="np. Warszawa, Mazowsze"
+              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
+            />
+            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz miasto lub region.</p>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            id="submit-btn-bottom"
+            class="w-full bg-brand-accent hover:bg-blue-500 text-white font-black text-lg py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/20 mt-2"
+          >
+            Sprawdź wolne miejsce →
+          </button>
+
+          <p class="text-center text-gray-500 text-sm">
+            Przesyłając formularz, wyrażasz zgodę na kontakt telefoniczny w celu omówienia współpracy.
+          </p>
+        </form>
+      </div>
+
+      <div id="form-bottom-success" class="hidden text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
+          <span class="text-green-400 text-3xl">✓</span>
+        </div>
+        <h3 class="text-white font-black text-2xl mb-3">Dziękujemy!</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Oddzwonimy w ciągu 15 minut.
+        </p>
+      </div>
+
+      <div id="form-bottom-error" class="hidden text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-6">
+          <span class="text-red-400 text-3xl">✕</span>
+        </div>
+        <h3 class="text-white font-black text-2xl mb-3">Coś poszło nie tak.</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Zadzwoń do nas: <a href="tel:511205230" class="text-brand-accent font-bold">511 205 230</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       8. FOOTER
   ============================================================ -->
   <footer class="bg-brand-darker border-t border-white/5 py-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -842,16 +833,17 @@
       });
     });
 
-    // ---- Form ----
-    const form        = document.getElementById('contact-form');
-    const formWrapper = document.getElementById('form-wrapper');
-    const formSuccess = document.getElementById('form-success');
+    // ---- YouTube lazy load ----
+    document.querySelectorAll('.yt-lazy').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.dataset.videoid;
+        el.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" allowfullscreen allow="autoplay" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>`;
+      });
+    });
 
+    // ---- Helpers ----
     function isValidPolishPhone(val) {
       return /^(\+48)?[0-9]{9}$/.test(val.replace(/[\s\-]/g, ''));
-    }
-    function isValidEmail(val) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
     }
     function showError(field, show) {
       const msg = field.closest('div').querySelector('.error-msg');
@@ -859,50 +851,13 @@
       if (msg) msg.classList.toggle('hidden', !show);
     }
 
-    form.querySelectorAll('input, select').forEach(el => {
-      el.addEventListener('input',  () => showError(el, false));
-      el.addEventListener('change', () => showError(el, false));
-    });
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      let valid = true;
-
-      const fullName   = document.getElementById('fullName');
-      const officeName = document.getElementById('officeName');
-      const city       = document.getElementById('city');
-      const phone      = document.getElementById('phone');
-      const email      = document.getElementById('email');
-      const agentCount = document.getElementById('agentCount');
-
-      if (!fullName.value.trim())          { showError(fullName, true);   valid = false; }
-      if (!officeName.value.trim())        { showError(officeName, true); valid = false; }
-      if (!city.value.trim())              { showError(city, true);       valid = false; }
-      if (!isValidPolishPhone(phone.value)){ showError(phone, true);      valid = false; }
-      if (!isValidEmail(email.value))      { showError(email, true);      valid = false; }
-      if (!agentCount.value)               { showError(agentCount, true); valid = false; }
-
-      if (!valid) return;
-
-      const sources = [...form.querySelectorAll('input[name="sources"]:checked')].map(cb => cb.value);
-
-      const payload = {
-        first_name:        fullName.value.trim().split(' ')[0],
-        phone:             phone.value.trim(),
-        email:             email.value.trim(),
-        city:              city.value.trim(),
-        agents_count:      agentCount.value,
-        lead_source:       sources.join(', '),
-        desired_contracts: document.getElementById('contractGoal').value,
-      };
-
-      const btn = document.getElementById('submit-btn');
-      btn.disabled = true;
-      btn.textContent = 'Wysyłanie…';
-
+    async function submitFormData(payload, btnEl, wrapperEl, successEl, errorEl) {
       const formParams = new URLSearchParams(Object.entries(payload).map(([k, v]) =>
         [k, Array.isArray(v) ? v.join(', ') : v]
       ));
+
+      btnEl.disabled = true;
+      btnEl.textContent = 'Wysyłanie…';
 
       try {
         await Promise.allSettled([
@@ -916,12 +871,82 @@
           }),
         ]);
         if (typeof fbq === 'function') fbq('track', 'Lead');
-        formWrapper.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
+        wrapperEl.classList.add('hidden');
+        successEl.classList.remove('hidden');
       } catch (_) {
-        formWrapper.classList.add('hidden');
-        document.getElementById('form-error').classList.remove('hidden');
+        wrapperEl.classList.add('hidden');
+        errorEl.classList.remove('hidden');
       }
+    }
+
+    // ---- Główny formularz ----
+    const form        = document.getElementById('contact-form');
+    const formWrapper = document.getElementById('form-wrapper');
+    const formSuccess = document.getElementById('form-success');
+    const formError   = document.getElementById('form-error');
+
+    form.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input',  () => showError(el, false));
+      el.addEventListener('change', () => showError(el, false));
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      const fullName = document.getElementById('fullName');
+      const phone    = document.getElementById('phone');
+      const city     = document.getElementById('city');
+
+      if (!fullName.value.trim())           { showError(fullName, true); valid = false; }
+      if (!isValidPolishPhone(phone.value)) { showError(phone, true);    valid = false; }
+      if (!city.value.trim())               { showError(city, true);     valid = false; }
+
+      if (!valid) return;
+
+      const payload = {
+        first_name: fullName.value.trim().split(' ')[0],
+        phone:      phone.value.trim(),
+        city:       city.value.trim(),
+      };
+
+      const btn = document.getElementById('submit-btn');
+      await submitFormData(payload, btn, formWrapper, formSuccess, formError);
+    });
+
+    // ---- Dolny formularz ----
+    const formBottom        = document.getElementById('contact-form-bottom');
+    const formBottomWrapper = document.getElementById('form-bottom-wrapper');
+    const formBottomSuccess = document.getElementById('form-bottom-success');
+    const formBottomError   = document.getElementById('form-bottom-error');
+
+    formBottom.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input',  () => showError(el, false));
+      el.addEventListener('change', () => showError(el, false));
+    });
+
+    formBottom.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      const fullName2 = document.getElementById('fullName2');
+      const phone2    = document.getElementById('phone2');
+      const city2     = document.getElementById('city2');
+
+      if (!fullName2.value.trim())           { showError(fullName2, true); valid = false; }
+      if (!isValidPolishPhone(phone2.value)) { showError(phone2, true);    valid = false; }
+      if (!city2.value.trim())               { showError(city2, true);     valid = false; }
+
+      if (!valid) return;
+
+      const payload = {
+        first_name: fullName2.value.trim().split(' ')[0],
+        phone:      phone2.value.trim(),
+        city:       city2.value.trim(),
+      };
+
+      const btn = document.getElementById('submit-btn-bottom');
+      await submitFormData(payload, btn, formBottomWrapper, formBottomSuccess, formBottomError);
     });
 
     // Odblokuj scroll i wróć na górę po załadowaniu strony
