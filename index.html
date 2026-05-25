@@ -877,6 +877,9 @@
     function isValidPolishPhone(val) {
       return /^(\+48)?[0-9]{9}$/.test(val.replace(/[\s\-]/g, ''));
     }
+    function isValidEmail(val) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    }
     function showError(field, show) {
       const msg = field.closest('div').querySelector('.error-msg');
       field.classList.toggle('invalid', show);
