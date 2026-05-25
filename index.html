@@ -283,6 +283,22 @@
             <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz miasto lub region.</p>
           </div>
 
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-semibold text-gray-300 mb-1.5">
+              Adres email <span class="text-brand-accent">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="jan@biuro.pl"
+              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
+            />
+            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny adres email.</p>
+          </div>
+
           <!-- Submit -->
           <button
             type="submit"
@@ -678,6 +694,22 @@
             <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz miasto lub region.</p>
           </div>
 
+          <!-- Email -->
+          <div>
+            <label for="email2" class="block text-sm font-semibold text-gray-300 mb-1.5">
+              Adres email <span class="text-brand-accent">*</span>
+            </label>
+            <input
+              type="email"
+              id="email2"
+              name="email"
+              autocomplete="email"
+              placeholder="jan@biuro.pl"
+              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
+            />
+            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny adres email.</p>
+          </div>
+
           <!-- Submit -->
           <button
             type="submit"
@@ -897,10 +929,12 @@
       const fullName = document.getElementById('fullName');
       const phone    = document.getElementById('phone');
       const city     = document.getElementById('city');
+      const email    = document.getElementById('email');
 
       if (!fullName.value.trim())           { showError(fullName, true); valid = false; }
       if (!isValidPolishPhone(phone.value)) { showError(phone, true);    valid = false; }
       if (!city.value.trim())               { showError(city, true);     valid = false; }
+      if (!isValidEmail(email.value))       { showError(email, true);    valid = false; }
 
       if (!valid) return;
 
@@ -908,6 +942,7 @@
         first_name: fullName.value.trim().split(' ')[0],
         phone:      phone.value.trim(),
         city:       city.value.trim(),
+        email:      email.value.trim(),
       };
 
       const btn = document.getElementById('submit-btn');
@@ -932,10 +967,12 @@
       const fullName2 = document.getElementById('fullName2');
       const phone2    = document.getElementById('phone2');
       const city2     = document.getElementById('city2');
+      const email2    = document.getElementById('email2');
 
       if (!fullName2.value.trim())           { showError(fullName2, true); valid = false; }
       if (!isValidPolishPhone(phone2.value)) { showError(phone2, true);    valid = false; }
       if (!city2.value.trim())               { showError(city2, true);     valid = false; }
+      if (!isValidEmail(email2.value))       { showError(email2, true);    valid = false; }
 
       if (!valid) return;
 
@@ -943,6 +980,7 @@
         first_name: fullName2.value.trim().split(' ')[0],
         phone:      phone2.value.trim(),
         city:       city2.value.trim(),
+        email:      email2.value.trim(),
       };
 
       const btn = document.getElementById('submit-btn-bottom');
