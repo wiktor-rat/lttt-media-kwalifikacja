@@ -220,119 +220,22 @@
   <!-- ============================================================
        2. FORMULARZ KWALIFIKACYJNY
   ============================================================ -->
-  <section id="formularz" class="bg-brand-dark py-20 fade-in-section">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="text-center mb-10">
-        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-          Sprawdź, czy możemy Ci pomóc — zajmuje 30 sekund
-        </h2>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.
-        </p>
-      </div>
-
-      <div id="form-wrapper">
-        <form id="contact-form" novalidate class="space-y-5">
-
-          <!-- Imię i nazwisko -->
-          <div>
-            <label for="fullName" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Imię i nazwisko <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              autocomplete="name"
-              placeholder="Jan Kowalski"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz imię i nazwisko.</p>
-          </div>
-
-          <!-- Email -->
-          <div>
-            <label for="email" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Adres email <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              autocomplete="email"
-              placeholder="jan@biuro.pl"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny adres email.</p>
-          </div>
-
-          <!-- Numer telefonu -->
-          <div>
-            <label for="phone" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Numer telefonu <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              autocomplete="tel"
-              placeholder="np. 500 100 200"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny polski numer telefonu (9 cyfr).</p>
-          </div>
-
-          <!-- Miasto / region -->
-          <div>
-            <label for="city" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Miasto / region <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="text"
-              id="city"
-              name="city"
-              autocomplete="address-level2"
-              placeholder="np. Warszawa, Mazowsze"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz miasto lub region.</p>
-          </div>
-
-          <!-- Submit -->
-          <button
-            type="submit"
-            id="submit-btn"
-            class="w-full bg-brand-accent hover:bg-blue-500 text-white font-black text-lg py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/20 mt-2"
-          >
-            Sprawdź wolne miejsce →
-          </button>
-
-          <p class="text-center text-gray-500 text-sm">
-            Przesyłając formularz, wyrażasz zgodę na kontakt telefoniczny w celu omówienia współpracy.
-          </p>
-        </form>
-      </div>
-
-      <div id="form-success" class="hidden text-center py-12">
-        <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
-          <span class="text-green-400 text-3xl">✓</span>
-        </div>
-        <h3 class="text-white font-black text-2xl mb-3">Dziękujemy!</h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Oddzwonimy w ciągu 15 minut.
-        </p>
-      </div>
-
-      <div id="form-error" class="hidden text-center py-12">
-        <div class="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-6">
-          <span class="text-red-400 text-3xl">✕</span>
-        </div>
-        <h3 class="text-white font-black text-2xl mb-3">Coś poszło nie tak.</h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Zadzwoń do nas: <a href="tel:511205230" class="text-brand-accent font-bold">511 205 230</a>
-        </p>
-      </div>
+  <section id="formularz" class="bg-brand-dark fade-in-section">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
+      <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
+        Sprawdź, czy Twój rynek jest jeszcze dostępny
+      </h2>
+      <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+        Działamy maksymalnie z jednym biurem w danym mieście.<br class="hidden sm:block" />
+        Wolne miejsca weryfikujemy przed startem.
+      </p>
+      <button
+        id="open-popup-btn"
+        class="w-full sm:w-auto inline-flex items-center justify-center bg-brand-accent hover:bg-blue-500 text-white font-black text-lg px-10 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
+      >
+        Sprawdź wolne miejsce →
+      </button>
+      <p class="mt-4 text-gray-500 text-sm">Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.</p>
     </div>
   </section>
 
@@ -631,119 +534,20 @@
   <!-- ============================================================
        7. POWTÓRZONY FORMULARZ (dół strony) + CTA
   ============================================================ -->
-  <section id="formularz-bottom" class="bg-brand-dark py-20 fade-in-section">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="text-center mb-10">
-        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-          Sprawdź, czy możemy Ci pomóc — zajmuje 30 sekund
-        </h2>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.
-        </p>
-      </div>
-
-      <div id="form-bottom-wrapper">
-        <form id="contact-form-bottom" novalidate class="space-y-5">
-
-          <!-- Imię i nazwisko -->
-          <div>
-            <label for="fullName2" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Imię i nazwisko <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="text"
-              id="fullName2"
-              name="fullName"
-              autocomplete="name"
-              placeholder="Jan Kowalski"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz imię i nazwisko.</p>
-          </div>
-
-          <!-- Email -->
-          <div>
-            <label for="email2" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Adres email <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="email"
-              id="email2"
-              name="email"
-              autocomplete="email"
-              placeholder="jan@biuro.pl"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny adres email.</p>
-          </div>
-
-          <!-- Numer telefonu -->
-          <div>
-            <label for="phone2" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Numer telefonu <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="tel"
-              id="phone2"
-              name="phone"
-              autocomplete="tel"
-              placeholder="np. 500 100 200"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny polski numer telefonu (9 cyfr).</p>
-          </div>
-
-          <!-- Miasto / region -->
-          <div>
-            <label for="city2" class="block text-sm font-semibold text-gray-300 mb-1.5">
-              Miasto / region <span class="text-brand-accent">*</span>
-            </label>
-            <input
-              type="text"
-              id="city2"
-              name="city"
-              autocomplete="address-level2"
-              placeholder="np. Warszawa, Mazowsze"
-              class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors"
-            />
-            <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz miasto lub region.</p>
-          </div>
-
-          <!-- Submit -->
-          <button
-            type="submit"
-            id="submit-btn-bottom"
-            class="w-full bg-brand-accent hover:bg-blue-500 text-white font-black text-lg py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/20 mt-2"
-          >
-            Sprawdź wolne miejsce →
-          </button>
-
-          <p class="text-center text-gray-500 text-sm">
-            Przesyłając formularz, wyrażasz zgodę na kontakt telefoniczny w celu omówienia współpracy.
-          </p>
-        </form>
-      </div>
-
-      <div id="form-bottom-success" class="hidden text-center py-12">
-        <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
-          <span class="text-green-400 text-3xl">✓</span>
-        </div>
-        <h3 class="text-white font-black text-2xl mb-3">Dziękujemy!</h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Oddzwonimy w ciągu 15 minut.
-        </p>
-      </div>
-
-      <div id="form-bottom-error" class="hidden text-center py-12">
-        <div class="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-6">
-          <span class="text-red-400 text-3xl">✕</span>
-        </div>
-        <h3 class="text-white font-black text-2xl mb-3">Coś poszło nie tak.</h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          Zadzwoń do nas: <a href="tel:511205230" class="text-brand-accent font-bold">511 205 230</a>
-        </p>
-      </div>
+  <section id="formularz-bottom" class="bg-brand-dark fade-in-section">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
+      <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
+        Gotowy, żeby przestać szukać klientów?
+      </h2>
+      <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+        Sprawdź czy Twoje miasto jest jeszcze dostępne — zajmuje 30 sekund.
+      </p>
+      <button
+        class="open-popup-btn w-full sm:w-auto inline-flex items-center justify-center bg-brand-accent hover:bg-blue-500 text-white font-black text-lg px-10 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
+      >
+        Sprawdź wolne miejsce →
+      </button>
+      <p class="mt-4 text-gray-500 text-sm">Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.</p>
     </div>
   </section>
 
@@ -806,6 +610,72 @@
       </div>
     </div>
   </footer>
+
+
+  <!-- ============================================================
+     POP-UP
+============================================================ -->
+<div id="popup-overlay" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden" style="background:rgba(0,0,0,0.7);">
+  <div id="popup-box" class="bg-brand-dark border border-white/10 rounded-2xl w-full max-w-md p-8 relative" style="opacity:0;transform:scale(0.95);transition:opacity 0.2s ease,transform 0.2s ease;">
+
+    <!-- Zamknij -->
+    <button id="close-popup-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+
+    <!-- Nagłówek -->
+    <h3 class="text-white font-black text-2xl mb-2">Zostaw dane — oddzwonimy w ciągu 24h</h3>
+    <p class="text-gray-400 text-sm mb-6">Zero zobowiązań. Sprawdzimy Twój rynek i powiemy wprost czy możemy pomóc.</p>
+
+    <!-- Formularz -->
+    <div id="popup-form-wrapper">
+      <form id="popup-form" novalidate class="space-y-4">
+
+        <div>
+          <label for="popup-fullName" class="block text-sm font-semibold text-gray-300 mb-1.5">Imię i nazwisko <span class="text-brand-accent">*</span></label>
+          <input type="text" id="popup-fullName" name="fullName" autocomplete="name" placeholder="Jan Kowalski"
+            class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors" />
+          <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz imię i nazwisko.</p>
+        </div>
+
+        <div>
+          <label for="popup-email" class="block text-sm font-semibold text-gray-300 mb-1.5">Adres email <span class="text-brand-accent">*</span></label>
+          <input type="email" id="popup-email" name="email" autocomplete="email" placeholder="jan@biuro.pl"
+            class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors" />
+          <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny adres email.</p>
+        </div>
+
+        <div>
+          <label for="popup-phone" class="block text-sm font-semibold text-gray-300 mb-1.5">Numer telefonu <span class="text-brand-accent">*</span></label>
+          <input type="tel" id="popup-phone" name="phone" autocomplete="tel" placeholder="np. 500 100 200"
+            class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors" />
+          <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny polski numer telefonu (9 cyfr).</p>
+        </div>
+
+        <div>
+          <label for="popup-city" class="block text-sm font-semibold text-gray-300 mb-1.5">Miasto / region <span class="text-brand-accent">*</span></label>
+          <input type="text" id="popup-city" name="city" autocomplete="address-level2" placeholder="np. Warszawa, Mazowsze"
+            class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors" />
+          <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz miasto lub region.</p>
+        </div>
+
+        <button type="submit" id="popup-submit-btn"
+          class="w-full bg-brand-accent hover:bg-blue-500 text-white font-black text-lg py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/20 mt-2">
+          Sprawdź wolne miejsce →
+        </button>
+
+        <p class="text-center text-gray-500 text-xs">Przesyłając formularz, wyrażasz zgodę na kontakt telefoniczny w celu omówienia współpracy.</p>
+      </form>
+    </div>
+
+    <div id="popup-success" class="hidden text-center py-8">
+      <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+        <span class="text-green-400 text-3xl">✓</span>
+      </div>
+      <h3 class="text-white font-black text-xl mb-2">Dziękujemy!</h3>
+      <p class="text-gray-400">Oddzwonimy w ciągu 15 minut.</p>
+    </div>
+
+  </div>
+</div>
 
 
   <!-- ============================================================
@@ -914,80 +784,82 @@
       }
     }
 
-    // ---- Główny formularz ----
-    const form        = document.getElementById('contact-form');
-    const formWrapper = document.getElementById('form-wrapper');
-    const formSuccess = document.getElementById('form-success');
-    const formError   = document.getElementById('form-error');
+    // ---- Pop-up ----
+    function openPopup() {
+      const overlay = document.getElementById('popup-overlay');
+      const box = document.getElementById('popup-box');
+      overlay.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        box.style.opacity = '1';
+        box.style.transform = 'scale(1)';
+      });
+      document.body.style.overflow = 'hidden';
+    }
 
-    form.querySelectorAll('input').forEach(el => {
-      el.addEventListener('input',  () => showError(el, false));
+    function closePopup() {
+      const overlay = document.getElementById('popup-overlay');
+      const box = document.getElementById('popup-box');
+      box.style.opacity = '0';
+      box.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+
+    document.getElementById('open-popup-btn').addEventListener('click', openPopup);
+    document.querySelectorAll('.open-popup-btn').forEach(btn => btn.addEventListener('click', openPopup));
+    document.getElementById('close-popup-btn').addEventListener('click', closePopup);
+    document.getElementById('popup-overlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('popup-overlay')) closePopup();
+    });
+
+    // Pop-up form submit
+    const popupForm = document.getElementById('popup-form');
+    const popupFormWrapper = document.getElementById('popup-form-wrapper');
+    const popupSuccess = document.getElementById('popup-success');
+
+    popupForm.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', () => showError(el, false));
       el.addEventListener('change', () => showError(el, false));
     });
 
-    form.addEventListener('submit', async (e) => {
+    popupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       let valid = true;
 
-      const fullName = document.getElementById('fullName');
-      const phone    = document.getElementById('phone');
-      const city     = document.getElementById('city');
-      const email    = document.getElementById('email');
+      const fullName = document.getElementById('popup-fullName');
+      const email    = document.getElementById('popup-email');
+      const phone    = document.getElementById('popup-phone');
+      const city     = document.getElementById('popup-city');
 
-      if (!fullName.value.trim())           { showError(fullName, true); valid = false; }
-      if (!isValidPolishPhone(phone.value)) { showError(phone, true);    valid = false; }
-      if (!city.value.trim())               { showError(city, true);     valid = false; }
-      if (!isValidEmail(email.value))       { showError(email, true);    valid = false; }
+      if (!fullName.value.trim())         { showError(fullName, true); valid = false; }
+      if (!isValidEmail(email.value))     { showError(email, true);    valid = false; }
+      if (!isValidPolishPhone(phone.value)) { showError(phone, true);  valid = false; }
+      if (!city.value.trim())             { showError(city, true);      valid = false; }
 
       if (!valid) return;
 
       const payload = {
         first_name: fullName.value.trim().split(' ')[0],
+        email:      email.value.trim(),
         phone:      phone.value.trim(),
         city:       city.value.trim(),
-        email:      email.value.trim(),
       };
 
-      const btn = document.getElementById('submit-btn');
-      await submitFormData(payload, btn, formWrapper, formSuccess, formError);
-    });
+      const btn = document.getElementById('popup-submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Wysyłanie…';
 
-    // ---- Dolny formularz ----
-    const formBottom        = document.getElementById('contact-form-bottom');
-    const formBottomWrapper = document.getElementById('form-bottom-wrapper');
-    const formBottomSuccess = document.getElementById('form-bottom-success');
-    const formBottomError   = document.getElementById('form-bottom-error');
+      const formParams = new URLSearchParams(Object.entries(payload));
+      await Promise.allSettled([
+        fetch('https://services.leadconnectorhq.com/hooks/7hpPSc5SQgIWDCqEHtgF/webhook-trigger/7d9116c4-d499-42b8-a05f-975f13d02982', { method: 'POST', body: formParams }),
+        fetch('https://hooks.zapier.com/hooks/catch/19282604/4ygqjo0/', { method: 'POST', body: formParams }),
+      ]);
 
-    formBottom.querySelectorAll('input').forEach(el => {
-      el.addEventListener('input',  () => showError(el, false));
-      el.addEventListener('change', () => showError(el, false));
-    });
-
-    formBottom.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      let valid = true;
-
-      const fullName2 = document.getElementById('fullName2');
-      const phone2    = document.getElementById('phone2');
-      const city2     = document.getElementById('city2');
-      const email2    = document.getElementById('email2');
-
-      if (!fullName2.value.trim())           { showError(fullName2, true); valid = false; }
-      if (!isValidPolishPhone(phone2.value)) { showError(phone2, true);    valid = false; }
-      if (!city2.value.trim())               { showError(city2, true);     valid = false; }
-      if (!isValidEmail(email2.value))       { showError(email2, true);    valid = false; }
-
-      if (!valid) return;
-
-      const payload = {
-        first_name: fullName2.value.trim().split(' ')[0],
-        phone:      phone2.value.trim(),
-        city:       city2.value.trim(),
-        email:      email2.value.trim(),
-      };
-
-      const btn = document.getElementById('submit-btn-bottom');
-      await submitFormData(payload, btn, formBottomWrapper, formBottomSuccess, formBottomError);
+      if (typeof fbq === 'function') fbq('track', 'Lead');
+      popupFormWrapper.classList.add('hidden');
+      popupSuccess.classList.remove('hidden');
     });
 
     // Odblokuj scroll i wróć na górę po załadowaniu strony
