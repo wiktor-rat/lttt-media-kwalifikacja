@@ -48,6 +48,11 @@
     if (window.location.hash) {
       history.replaceState(null, null, window.location.pathname + window.location.search);
     }
+    window.addEventListener('load', function() {
+      window.scrollTo(0, 0);
+      var el = document.getElementById('init-no-scroll');
+      if (el) el.remove();
+    });
   </script>
 
   <style>
@@ -150,19 +155,19 @@
         <span class="text-brand-accent text-xs font-semibold tracking-widest uppercase">Lead To The Top</span>
       </a>
 
-      <a
-        href="#formularz"
+      <button
+        onclick="openPopup()"
         class="hidden sm:inline-flex items-center bg-brand-accent hover:bg-blue-500 text-white font-bold text-sm px-5 py-2.5 rounded-lg transition-colors duration-200"
       >
         Sprawdź wolne miejsce →
-      </a>
+      </button>
 
-      <a
-        href="#formularz"
+      <button
+        onclick="openPopup()"
         class="sm:hidden inline-flex items-center bg-brand-accent hover:bg-blue-500 text-white font-bold text-sm px-4 py-2 rounded-lg transition-colors duration-200"
       >
         Formularz →
-      </a>
+      </button>
     </div>
   </nav>
 
@@ -178,24 +183,24 @@
       </div>
 
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6">
-        6 umów na wyłączność w 3 miesiące — gwarantujemy.<br class="hidden md:block" />
-        <span class="text-brand-accent">Albo pracujemy za darmo.</span>
+        Jedna z największych agencji<br class="hidden md:block" />
+        <span class="text-brand-accent">wyspecjalizowanych w nieruchomościach</span>
       </h1>
 
       <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-        50+ biur. 850+ umów w 2025. Jeśli nie dowieziemy 6 umów w 3 miesiące — kolejne 3 miesiące pracujemy za darmo.
+        Pomagamy biurom nieruchomości pozyskiwać klientów sprzedających — przez Meta Ads, lejki i automatyzacje. Nie jesteśmy agencją od wszystkiego. To nasza przewaga.
       </p>
 
       <!-- Social proof bar -->
       <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-0 text-sm sm:text-base text-gray-300 mb-10">
         <span class="flex items-center gap-1.5">
           <span class="text-green-400 font-bold">✓</span>
-          50+ aktywnych biur w Polsce
+          50+ aktywnych biur nieruchomości w Polsce
         </span>
         <span class="hidden sm:block mx-4 text-gray-600 font-bold">·</span>
         <span class="flex items-center gap-1.5">
           <span class="text-green-400 font-bold">✓</span>
-          Średnio 3–8 umów na wyłączność miesięcznie
+          850+ umów na wyłączność w 2025 roku
         </span>
         <span class="hidden sm:block mx-4 text-gray-600 font-bold">·</span>
         <span class="flex items-center gap-1.5">
@@ -204,35 +209,13 @@
         </span>
       </div>
 
-      <a
-        href="#formularz"
+      <button
+        onclick="openPopup()"
         class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-lg px-8 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
       >
         Sprawdź, czy możemy Ci pomóc&nbsp;→
-      </a>
-
-      <p class="mt-4 text-gray-500 text-sm">Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.</p>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       2. FORMULARZ KWALIFIKACYJNY
-  ============================================================ -->
-  <section id="formularz" class="bg-brand-dark fade-in-section" style="scroll-margin-top: 110px;">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
-      <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-        Sprawdź, czy jest jeszcze wolne miejsce w tym miesiącu
-      </h2>
-      <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-        Przyjmujemy maks. 5 nowych biur miesięcznie — weryfikujemy rynek przed startem.
-      </p>
-      <button
-        id="open-popup-btn"
-        class="w-full sm:w-auto inline-flex items-center justify-center bg-brand-accent hover:bg-blue-500 text-white font-black text-lg px-10 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
-      >
-        Sprawdź wolne miejsce →
       </button>
+
       <p class="mt-4 text-gray-500 text-sm">Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.</p>
     </div>
   </section>
@@ -245,9 +228,22 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
-          Czy to brzmi znajomo?
+          Większość agencji nie rozumie rynku nieruchomości.<br class="hidden md:block" />
+          <span class="text-brand-accent">Czy to brzmi znajomo?</span>
         </h2>
         <p class="text-gray-500 text-lg">Jeśli tak — wiesz, że czas to zmienić.</p>
+      </div>
+
+      <!-- Specialty block -->
+      <div class="bg-brand-dark rounded-2xl p-8 mb-10 flex flex-col md:flex-row items-center gap-8">
+        <div class="text-center md:text-left flex-shrink-0">
+          <span class="text-5xl sm:text-6xl font-black text-brand-accent">850+</span>
+          <p class="text-white font-bold mt-1">umów na wyłączność<br />pozyskanych w 2025 r.</p>
+        </div>
+        <div class="border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8">
+          <p class="text-white font-black text-xl mb-3">Wyspecjalizowani wyłącznie w nieruchomościach</p>
+          <p class="text-gray-400 leading-relaxed">Nie obsługujemy restauracji, sklepów ani firm usługowych. Cała nasza wiedza, dane i kreacje reklamowe dotyczą wyłącznie rynku nieruchomości — dlatego nasze kampanie działają tam, gdzie inne agencje zawodzą.</p>
+        </div>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-5">
@@ -303,9 +299,9 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-          System, nie przypadek
+          Sprawdzony system, nie eksperymenty
         </h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Trzy kroki, które zamieniają obcych właścicieli nieruchomości w podpisane umowy na wyłączność — co miesiąc, przewidywalnie.</p>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Trzy etapy oparte na danych z 50+ kampanii — wdrażamy to, co już działa, nie testujemy na Twoim budżecie.</p>
       </div>
 
       <div class="flex flex-col md:flex-row items-stretch gap-6 md:gap-0">
@@ -349,12 +345,12 @@
       </div>
 
       <div class="mt-12 text-center">
-        <a
-          href="#formularz"
+        <button
+          onclick="openPopup()"
           class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-base px-7 py-3.5 rounded-xl transition-colors duration-200"
         >
           Chcę taki system w moim biurze →
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -443,6 +439,66 @@
 
 
   <!-- ============================================================
+       PARTNERSKA WSPÓŁPRACA
+  ============================================================ -->
+  <section id="wspolpraca" class="bg-white py-20 fade-in-section">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
+          Jak wygląda praca z nami
+        </h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Transparentna, partnerska współpraca — bez ukrytych kosztów, bez zaskoczeń.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6 mb-10">
+
+        <div class="bg-brand-dark rounded-2xl p-7 flex flex-col gap-3">
+          <div class="w-11 h-11 rounded-xl bg-brand-accent/20 flex items-center justify-center flex-shrink-0">
+            <span class="text-brand-accent text-2xl">👁</span>
+          </div>
+          <h3 class="text-white font-black text-xl">Pełna transparentność</h3>
+          <p class="text-gray-400 leading-relaxed">Masz dostęp do dashboardu z wynikami kampanii w czasie rzeczywistym. Wiesz, ile kosztuje każdy lead i skąd pochodzi.</p>
+        </div>
+
+        <div class="bg-brand-dark rounded-2xl p-7 flex flex-col gap-3">
+          <div class="w-11 h-11 rounded-xl bg-brand-accent/20 flex items-center justify-center flex-shrink-0">
+            <span class="text-brand-accent text-2xl">⚡</span>
+          </div>
+          <h3 class="text-white font-black text-xl">Szybkie wdrożenie</h3>
+          <p class="text-gray-400 leading-relaxed">Pierwsze kampanie uruchamiamy w 7–14 dni. Nie czekasz miesiącami — system zaczyna działać od razu.</p>
+        </div>
+
+        <div class="bg-brand-dark rounded-2xl p-7 flex flex-col gap-3">
+          <div class="w-11 h-11 rounded-xl bg-brand-accent/20 flex items-center justify-center flex-shrink-0">
+            <span class="text-brand-accent text-2xl">🔄</span>
+          </div>
+          <h3 class="text-white font-black text-xl">System 24/7</h3>
+          <p class="text-gray-400 leading-relaxed">Automatyzacje i kampanie pracują bez Twojej obecności — leady spływają nawet wtedy, gdy Ty jesteś na spotkaniach.</p>
+        </div>
+
+        <div class="bg-brand-dark rounded-2xl p-7 flex flex-col gap-3">
+          <div class="w-11 h-11 rounded-xl bg-brand-accent/20 flex items-center justify-center flex-shrink-0">
+            <span class="text-brand-accent text-2xl">📈</span>
+          </div>
+          <h3 class="text-white font-black text-xl">Ciągła optymalizacja</h3>
+          <p class="text-gray-400 leading-relaxed">Co miesiąc analizujemy wyniki i wdrażamy zmiany. Kampanie stają się coraz skuteczniejsze — im dłużej współpracujemy, tym lepsze efekty.</p>
+        </div>
+
+      </div>
+
+      <div class="text-center">
+        <button
+          onclick="openPopup()"
+          class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-base px-8 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
+        >
+          Sprawdź wolne miejsce →
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
        6. FAQ
   ============================================================ -->
   <section id="faq" class="bg-white py-20 fade-in-section">
@@ -518,30 +574,48 @@
       </div>
 
       <div class="mt-10 text-center">
-        <a
-          href="#formularz-bottom"
+        <button
+          onclick="openPopup()"
           class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-base px-7 py-3.5 rounded-xl transition-colors duration-200"
         >
           Zostaw dane — oddzwonimy →
-        </a>
+        </button>
       </div>
     </div>
   </section>
 
 
   <!-- ============================================================
-       7. POWTÓRZONY FORMULARZ (dół strony) + CTA
+       7. BOTTOM CTA
   ============================================================ -->
   <section id="formularz-bottom" class="bg-brand-dark fade-in-section">
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
-      <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-        Gotowy, żeby przestać szukać klientów?
+      <h2 class="text-3xl sm:text-4xl font-black text-white mb-6">
+        Przyjmujemy maks. 5 nowych biur miesięcznie
       </h2>
-      <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-        Sprawdź czy Twoje miasto jest jeszcze dostępne — zajmuje 30 sekund.
-      </p>
+
+      <ul class="text-left inline-block text-gray-300 space-y-3 mb-8">
+        <li class="flex items-start gap-3">
+          <span class="text-green-400 font-black flex-shrink-0 mt-0.5">✓</span>
+          <span>Kampanie Meta Ads wyłącznie dla biur nieruchomości</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-green-400 font-black flex-shrink-0 mt-0.5">✓</span>
+          <span>Automatyzacje i lejki, które kwalifikują leady 24/7</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-green-400 font-black flex-shrink-0 mt-0.5">✓</span>
+          <span>Pełna transparentność — wiesz, za co płacisz</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-green-400 font-black flex-shrink-0 mt-0.5">✓</span>
+          <span>Wdrożenie w 7–14 dni od podpisania umowy</span>
+        </li>
+      </ul>
+
       <button
-        class="open-popup-btn w-full sm:w-auto inline-flex items-center justify-center bg-brand-accent hover:bg-blue-500 text-white font-black text-lg px-10 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
+        onclick="openPopup()"
+        class="w-full sm:w-auto inline-flex items-center justify-center bg-brand-accent hover:bg-blue-500 text-white font-black text-lg px-10 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
       >
         Sprawdź wolne miejsce →
       </button>
@@ -805,8 +879,6 @@
       }, 200);
     }
 
-    document.getElementById('open-popup-btn').addEventListener('click', openPopup);
-    document.querySelectorAll('.open-popup-btn').forEach(btn => btn.addEventListener('click', openPopup));
     document.getElementById('close-popup-btn').addEventListener('click', closePopup);
     document.getElementById('popup-overlay').addEventListener('click', (e) => {
       if (e.target === document.getElementById('popup-overlay')) closePopup();
