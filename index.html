@@ -1,1104 +1,442 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seller Access — nowe zgłoszenia od właścicieli dla biur nieruchomości | LTTT MEDIA</title>
+<meta name="description" content="Seller Access to stały dopływ zgłoszeń od właścicieli mieszkań, domów i działek, którzy rozważają sprzedaż. Minimum 20 kontaktów w 30 dni albo pracujemy dalej bez wynagrodzenia.">
+<meta property="og:title" content="Seller Access — 20 kontaktów do właścicieli w 30 dni">
+<meta property="og:description" content="Produkt LTTT MEDIA dla biur nieruchomości. Gwarancja minimum 20 zgłoszeń od właścicieli w pierwszych 30 dniach.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1B3F;--navy2:#13285A;--navy3:#1B3570;--blue:#2F6BFF;--blue-d:#1F55E0;--blue-soft:#E8EFFF;
+  --ink:#0B1B3F;--muted:#5A6788;--line:#DCE3F2;--bg:#F6F8FC;--white:#fff;--ok:#16A34A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(34px,4.2vw,50px);line-height:1.05;letter-spacing:-.025em;font-weight:800}
+h2{font-size:clamp(28px,3.6vw,42px);line-height:1.12;letter-spacing:-.02em;font-weight:800;max-width:820px}
+h3{font-size:19px;line-height:1.3;font-weight:700}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:720px;margin-top:18px}
+.dark{background:var(--navy);color:#fff}
+.dark .lead,.dark p{color:#C3CEEA}
+.dark .eyebrow{color:#7EA3FF}
+.soft{background:var(--bg)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:16px 26px;border-radius:12px;border:0;cursor:pointer;transition:background .15s,transform .15s}
+.btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g3,.g4{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}section{padding:64px 0}}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+.card p{color:var(--muted);font-size:15.5px;margin-top:8px}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:6px;background:var(--blue-soft);color:var(--blue);margin-bottom:14px}
+.tag.grey{background:#EEF1F7;color:var(--muted)}
 
-  <!-- SEO -->
-  <title>LTTT MEDIA — Pozyskuj umowy na wyłączność bez cold calli</title>
-  <meta name="description" content="Uruchamiamy kampanie Meta Ads i lejki sprzedażowe dla biur nieruchomości. Średnio 3–8 umów na wyłączność miesięcznie. Sprawdź, czy możemy Ci pomóc." />
-  <meta property="og:title" content="LTTT MEDIA — System pozyskiwania umów na wyłączność" />
-  <meta property="og:description" content="Kampanie Meta Ads + lejki sprzedażowe dla biur nieruchomości w Polsce. 50+ aktywnych biur." />
-  <!-- TODO: Uzupełnij ścieżkę do zdjęcia OG (1200x630px) -->
-  <meta property="og:image" content="/og-image.jpg" />
-  <meta property="og:type" content="website" />
-  <meta name="robots" content="index, follow" />
+/* top bar */
+.topbar{background:var(--navy);color:#C3CEEA;font-size:14px;text-align:center;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar b{color:#fff}
+header.nav{position:sticky;top:0;z-index:20;background:rgba(11,27,63,.92);backdrop-filter:blur(10px);color:#fff}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;letter-spacing:-.01em;font-size:18px;text-decoration:none}
+.logo span{color:#7EA3FF;font-weight:600;font-size:13px;margin-left:8px;letter-spacing:.04em}
+.nav a.link{color:#C3CEEA;text-decoration:none;font-size:15px;margin-right:22px}
+.nav a.link:hover{color:#fff}
+@media(max-width:780px){.nav a.link{display:none}}
+.nav .btn{padding:10px 18px;font-size:14px}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:72px 0 96px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-180px;top:-160px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(47,107,255,.85) 0%,rgba(47,107,255,.15) 55%,rgba(47,107,255,0) 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+@media(max-width:980px){.hero .wrap{grid-template-columns:1fr}}
+.hero .lead{color:#C3CEEA}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.checks{list-style:none;margin-top:28px;display:grid;gap:10px}
+.checks li{padding-left:30px;position:relative;color:#DCE4F7;font-size:16px}
+.checks li::before{content:"";position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/11px no-repeat}
+.video{background:var(--navy2);border:1px solid #24407F;border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.video .frame{aspect-ratio:16/9;width:100%;display:block;border:0;background:#0E2150}
+.video .ph{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#9FB0D8;text-align:center;padding:24px}
+.video .ph .play{width:72px;height:72px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center}
+.video .cap{padding:16px 20px;font-size:14.5px;color:#C3CEEA;border-top:1px solid #24407F}
+.video .cap b{color:#fff}
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              dark:    '#0d1b3e',
-              darker:  '#071020',
-              mid:     '#0f2547',
-              accent:  '#1d7fe8',   /* elektryczny niebieski — kolor marki LTTT MEDIA */
-              light:   '#f8f9fa',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
+/* steps */
+.steps{counter-reset:s}
+.step{position:relative;padding:28px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;margin-bottom:16px}
+.step p{color:var(--muted);font-size:15px;margin-top:8px}
+.note{margin-top:28px;background:var(--blue-soft);border:1px solid #C9D8FF;border-radius:14px;padding:22px 26px;font-size:16.5px}
 
-  <style id="init-no-scroll">html { overflow: hidden !important; }</style>
-  <script>
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    if (window.location.hash) {
-      history.replaceState(null, null, window.location.pathname + window.location.search);
-    }
-    window.addEventListener('load', function() {
-      window.scrollTo(0, 0);
-      var el = document.getElementById('init-no-scroll');
-      if (el) el.remove();
-    });
-  </script>
+/* results */
+.k{font-size:46px;font-weight:800;color:var(--blue);letter-spacing:-.02em;line-height:1}
+.who{margin-top:14px;font-size:13.5px;color:var(--muted);font-weight:600}
+.stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.stats div{font-size:15px;color:var(--muted)}
+.stats b{display:block;font-size:30px;color:var(--ink);letter-spacing:-.02em}
+.fine{font-size:13px;color:var(--muted);margin-top:18px;max-width:820px}
+.dark .fine{color:#9FB0D8}
 
-  <style>
-    html { scroll-behavior: auto; }
+/* guarantee */
+.gcard{background:var(--navy2);border:1px solid #24407F;border-radius:16px;padding:26px}
+.gcard h3{color:#fff}
+.gcard p{font-size:15px;margin-top:8px}
 
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .fade-in-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* pricing */
+.price-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:40px}
+@media(max-width:900px){.price-wrap{grid-template-columns:1fr}}
+.price-main{border:2px solid var(--blue);border-radius:18px;padding:34px;background:#fff;position:relative}
+.price-main .amount{font-size:52px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
+.price-main .amount small{font-size:18px;color:var(--muted);font-weight:600;letter-spacing:0}
+.price-main ul{list-style:none;margin-top:22px;display:grid;gap:10px}
+.price-main li{padding-left:28px;position:relative;font-size:15.5px}
+.price-main li::before{content:"";position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/10px no-repeat}
+.budget{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:15.5px}
+.budget span:last-child{font-weight:700}
+.cont table{width:100%;border-collapse:collapse;margin-top:12px}
+.cont td{padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.cont td:last-child{text-align:right;font-weight:700;white-space:nowrap}
 
-    .step-arrow::after {
-      content: '→';
-      font-size: 1.5rem;
-      color: #1d7fe8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+/* calculator */
+.calc{background:var(--navy);color:#fff;border-radius:20px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:40px}
+@media(max-width:860px){.calc{grid-template-columns:1fr}}
+.calc label{display:block;font-size:14px;color:#C3CEEA;margin-bottom:8px;font-weight:600}
+.calc .field{margin-bottom:22px}
+.calc input[type=range]{width:100%;accent-color:var(--blue)}
+.calc .val{font-size:22px;font-weight:800;margin-top:4px}
+.calc .out{background:var(--navy2);border:1px solid #24407F;border-radius:16px;padding:26px}
+.calc .row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15.5px;color:#C3CEEA}
+.calc .row:last-child{border:0}
+.calc .row b{color:#fff;font-size:18px}
+.calc .big{font-size:40px;font-weight:800;color:#7EA3FF;letter-spacing:-.02em;line-height:1.1;margin-top:6px}
 
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease-out, padding 0.35s ease-out;
-    }
-    .accordion-content.open {
-      max-height: 300px;
-    }
+/* fit */
+ul.fit{list-style:none;display:grid;gap:0;margin-top:6px}
+ul.fit li{padding:12px 0 12px 30px;position:relative;border-bottom:1px solid var(--line);font-size:15.5px}
+ul.fit li:last-child{border:0}
+ul.fit li::before{content:"";position:absolute;left:4px;top:19px;width:10px;height:10px;border-radius:50%;background:var(--blue)}
+ul.fit.no li{color:var(--muted)}
+ul.fit.no li::before{background:none;border:2px solid #B6C1DA;width:6px;height:6px}
 
-    #navbar { transition: box-shadow 0.3s; }
-    #navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+/* prep */
+.prep{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+@media(max-width:860px){.prep{grid-template-columns:1fr}}
 
-    input.invalid, select.invalid {
-      border-color: #ef4444 !important;
-    }
+/* faq */
+details{border-bottom:1px solid var(--line);padding:20px 0}
+details summary{list-style:none;cursor:pointer;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-size:24px;line-height:1;color:var(--blue);font-weight:500}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:12px;font-size:15.5px;max-width:820px}
 
-    .yt-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 0.75rem;
-    }
-    .yt-wrapper iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
-    }
-
-    /* Pulsujący punkt na pasku pilności */
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-    .pulse-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
-  </style>
-
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1310366077906856');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1310366077906856&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+/* final */
+.final{text-align:center}
+.final h2{margin:0 auto}
+.final .lead{margin:16px auto 0}
+.final .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+footer{background:#081430;color:#8FA3D1;font-size:14px;padding:40px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer a{color:#C3CEEA;text-decoration:none}
+</style>
 </head>
+<body>
 
-<body class="font-sans bg-white text-gray-900 antialiased">
+<div class="topbar">Masz umówione spotkanie? <b>Obejrzyj 3-minutowe wideo poniżej</b> — rozmowa będzie krótsza i konkretna.</div>
 
-  <!-- ============================================================
-       PASEK PILNOŚCI (nad navbarem)
-  ============================================================ -->
-  <div class="bg-brand-accent text-white text-sm font-semibold text-center py-2.5 px-4">
-    <span class="pulse-dot inline-block w-2 h-2 rounded-full bg-white mr-2 align-middle"></span>
-    Przyjmujemy maks. 5 nowych biur miesięcznie — weryfikujemy rynek przed startem
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo">SELLER ACCESS<span>by LTTT MEDIA</span></a>
+    <nav>
+      <a class="link" href="#jak-dziala">Jak to działa</a>
+      <a class="link" href="#gwarancja">Gwarancja</a>
+      <a class="link" href="#cena">Cena</a>
+      <a class="link" href="#faq">FAQ</a>
+      <a class="btn" href="#kontakt">Umów rozmowę</a>
+    </nav>
   </div>
-
-  <!-- ============================================================
-       STICKY NAVBAR
-  ============================================================ -->
-  <nav id="navbar" class="sticky top-0 inset-x-0 z-50 backdrop-blur-sm" style="background-color: #0d1b3e;">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="flex flex-col select-none leading-tight">
-        <span class="text-white font-black text-lg tracking-widest">LTTT MEDIA</span>
-        <span class="text-brand-accent text-xs font-semibold tracking-widest uppercase">Lead To The Top</span>
-      </a>
-
-      <button
-        onclick="openPopup()"
-        class="hidden sm:inline-flex items-center bg-brand-accent hover:bg-blue-500 text-white font-bold text-sm px-5 py-2.5 rounded-lg transition-colors duration-200"
-      >
-        Sprawdź wolne miejsce →
-      </button>
-
-      <button
-        onclick="openPopup()"
-        class="sm:hidden inline-flex items-center bg-brand-accent hover:bg-blue-500 text-white font-bold text-sm px-4 py-2 rounded-lg transition-colors duration-200"
-      >
-        Formularz →
-      </button>
-    </div>
-  </nav>
-
-
-  <!-- ============================================================
-       1. HERO
-  ============================================================ -->
-  <section id="hero" class="bg-brand-dark min-h-[90vh] flex items-center">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-
-      <div class="inline-flex items-center gap-2 bg-brand-accent/15 border border-brand-accent/30 text-brand-accent text-sm font-semibold px-4 py-2 rounded-full mb-8">
-        <span>50+ biur nieruchomości w Polsce</span>
-      </div>
-
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6">
-        Jedna z największych agencji<br class="hidden md:block" />
-        <span class="text-brand-accent">wyspecjalizowanych w nieruchomościach</span>
-      </h1>
-
-      <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-        Pomagamy biurom nieruchomości pozyskiwać klientów sprzedających — przez Meta Ads, Google Ads, lejki i automatyzacje. Nie jesteśmy agencją od wszystkiego. To nasza przewaga.
-      </p>
-
-      <!-- Social proof bar -->
-      <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-0 text-sm sm:text-base text-gray-300 mb-10">
-        <span class="flex items-center gap-1.5">
-          <span class="text-green-400 font-bold">✓</span>
-          50+ aktywnych biur nieruchomości w Polsce
-        </span>
-        <span class="hidden sm:block mx-4 text-gray-600 font-bold">·</span>
-        <span class="flex items-center gap-1.5">
-          <span class="text-green-400 font-bold">✓</span>
-          850+ umów na wyłączność w 2025 roku
-        </span>
-        <span class="hidden sm:block mx-4 text-gray-600 font-bold">·</span>
-        <span class="flex items-center gap-1.5">
-          <span class="text-green-400 font-bold">✓</span>
-          System działa 24/7 bez Twojej obecności
-        </span>
-      </div>
-
-      <button
-        onclick="openPopup()"
-        class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-lg px-8 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
-      >
-        Sprawdź, czy możemy Ci pomóc&nbsp;→
-      </button>
-
-      <p class="mt-4 text-gray-500 text-sm">Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.</p>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       3. PROBLEM
-  ============================================================ -->
-  <section id="problem" class="bg-white py-20 fade-in-section">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
-          Większość agencji nie rozumie rynku nieruchomości.<br class="hidden md:block" />
-          <span class="text-brand-accent">Czy to brzmi znajomo?</span>
-        </h2>
-        <p class="text-gray-500 text-lg">Jeśli tak — wiesz, że czas to zmienić.</p>
-      </div>
-
-      <!-- Specialty block -->
-      <div class="bg-brand-dark rounded-2xl p-8 mb-10 flex flex-col md:flex-row items-center gap-8">
-        <div class="text-center md:text-left flex-shrink-0">
-          <span class="text-5xl sm:text-6xl font-black text-brand-accent">850+</span>
-          <p class="text-white font-bold mt-1">umów na wyłączność<br />pozyskanych w 2025 r.</p>
-        </div>
-        <div class="border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8">
-          <p class="text-white font-black text-xl mb-3">Wyspecjalizowani wyłącznie w nieruchomościach</p>
-          <p class="text-gray-400 leading-relaxed">Nie obsługujemy restauracji, sklepów ani firm usługowych. Cała nasza wiedza, dane i kreacje reklamowe dotyczą wyłącznie rynku nieruchomości — dlatego nasze kampanie działają tam, gdzie inne agencje zawodzą.</p>
-        </div>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-5">
-
-        <div class="flex items-start gap-4 bg-red-50 border border-red-100 rounded-2xl p-6">
-          <span class="text-red-500 text-2xl font-black flex-shrink-0 leading-none mt-0.5">✗</span>
-          <div>
-            <p class="text-gray-900 font-bold text-base mb-1">Każdy miesiąc zaczynam od zera</p>
-            <p class="text-gray-600 text-sm">Nie wiem, ilu klientów przyjdzie — i nie mogę tego zaplanować.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4 bg-red-50 border border-red-100 rounded-2xl p-6">
-          <span class="text-red-500 text-2xl font-black flex-shrink-0 leading-none mt-0.5">✗</span>
-          <div>
-            <p class="text-gray-900 font-bold text-base mb-1">Cold calling pożera czas agentów</p>
-            <p class="text-gray-600 text-sm">Efekty są coraz gorsze, a ludzie są coraz bardziej odporni na zimne telefony.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4 bg-red-50 border border-red-100 rounded-2xl p-6">
-          <span class="text-red-500 text-2xl font-black flex-shrink-0 leading-none mt-0.5">✗</span>
-          <div>
-            <p class="text-gray-900 font-bold text-base mb-1">Próbowałem reklam — przepaliłem kasę</p>
-            <p class="text-gray-600 text-sm">Wydałem budżet i nic z tego nie wyszło. Problem tkwi w systemie, nie w budżecie.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4 bg-red-50 border border-red-100 rounded-2xl p-6">
-          <span class="text-red-500 text-2xl font-black flex-shrink-0 leading-none mt-0.5">✗</span>
-          <div>
-            <p class="text-gray-900 font-bold text-base mb-1">Polecenia działają, ale to loteria</p>
-            <p class="text-gray-600 text-sm">Nie da się zbudować skalowalnego biura na przypadkowych rekomendacjach.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Most do rozwiązania -->
-      <div class="mt-10 text-center">
-        <a href="#rozwiazanie" class="inline-flex items-center gap-2 text-brand-accent font-bold hover:underline text-base">
-          Zobacz jak to rozwiązujemy ↓
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       4. ROZWIĄZANIE — 3 kroki
-  ============================================================ -->
-  <section id="rozwiazanie" class="bg-brand-dark py-20 fade-in-section">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-          Sprawdzony system, nie eksperymenty
-        </h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Trzy etapy oparte na danych z 50+ kampanii — wdrażamy to, co już działa, nie testujemy na Twoim budżecie.</p>
-      </div>
-
-      <div class="flex flex-col md:flex-row items-stretch gap-6 md:gap-0">
-
-        <div class="flex-1 bg-brand-mid border border-white/10 rounded-2xl p-8 flex flex-col gap-4">
-          <div class="w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center flex-shrink-0">
-            <span class="text-white font-black text-xl">1</span>
-          </div>
-          <h3 class="text-white font-bold text-xl">Kampanie Meta & Google Ads</h3>
-          <p class="text-gray-400 text-base leading-relaxed">
-            Docieramy do właścicieli chcących sprzedać nieruchomość — przez Meta Ads i Google Ads. Precyzyjne targetowanie oparte na danych z 50+ kampanii w Polsce.
-          </p>
-        </div>
-
-        <div class="hidden md:flex items-center px-4 step-arrow flex-shrink-0"></div>
-        <div class="flex md:hidden justify-center text-brand-accent text-2xl">↓</div>
-
-        <div class="flex-1 bg-brand-mid border border-white/10 rounded-2xl p-8 flex flex-col gap-4">
-          <div class="w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center flex-shrink-0">
-            <span class="text-white font-black text-xl">2</span>
-          </div>
-          <h3 class="text-white font-bold text-xl">Kwalifikacja leada</h3>
-          <p class="text-gray-400 text-base leading-relaxed">
-            System filtruje i podgrzewa kontakty — do Ciebie trafiają tylko gotowi, zmotywowani właściciele nieruchomości.
-          </p>
-        </div>
-
-        <div class="hidden md:flex items-center px-4 step-arrow flex-shrink-0"></div>
-        <div class="flex md:hidden justify-center text-brand-accent text-2xl">↓</div>
-
-        <div class="flex-1 bg-brand-mid border border-white/10 rounded-2xl p-8 flex flex-col gap-4">
-          <div class="w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center flex-shrink-0">
-            <span class="text-white font-black text-xl">3</span>
-          </div>
-          <h3 class="text-white font-bold text-xl">Umowa na wyłączność</h3>
-          <p class="text-gray-400 text-base leading-relaxed">
-            Twój agent zamyka spotkanie — mamy gotowy skrypt i wsparcie sprzedażowe, które realnie zwiększa skuteczność.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="mt-12 text-center">
-        <button
-          onclick="openPopup()"
-          class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-base px-7 py-3.5 rounded-xl transition-colors duration-200"
-        >
-          Chcę taki system w moim biurze →
-        </button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       LICZBY, NIE OBIETNICE
-  ============================================================ -->
-  <section id="liczby" class="bg-brand-darker py-20 fade-in-section">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-          Liczby, nie obietnice
-        </h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Bez gwarancji liczby umów — tylko twarda matematyka, która pokazuje różnicę.</p>
-      </div>
-
-      <!-- Tabela porównawcza -->
-      <div class="grid sm:grid-cols-2 gap-4">
-
-        <!-- Nagłówki -->
-        <div class="bg-brand-accent rounded-2xl px-6 py-4 text-center">
-          <p class="text-white font-black text-lg">Lead z naszego systemu</p>
-        </div>
-        <div class="bg-brand-mid border border-white/10 rounded-2xl px-6 py-4 text-center">
-          <p class="text-gray-300 font-black text-lg">Cold call agenta</p>
-        </div>
-
-        <!-- Wiersz 1 -->
-        <div class="bg-brand-mid border border-brand-accent/30 rounded-2xl px-6 py-5 flex flex-col gap-2">
-          <span class="text-brand-accent text-xs font-bold uppercase tracking-wider">Z 10 kontaktów</span>
-          <p class="text-white font-black text-xl">~3 podpisane umowy</p>
-        </div>
-        <div class="bg-brand-mid border border-white/10 rounded-2xl px-6 py-5 flex flex-col gap-2">
-          <span class="text-gray-500 text-xs font-bold uppercase tracking-wider">Z 10 kontaktów</span>
-          <p class="text-gray-300 font-black text-xl">0,5–1 umówione spotkanie</p>
-        </div>
-
-        <!-- Wiersz 2 -->
-        <div class="bg-brand-mid border border-brand-accent/30 rounded-2xl px-6 py-5 flex flex-col gap-2">
-          <span class="text-brand-accent text-xs font-bold uppercase tracking-wider">Na 1 pewną umowę</span>
-          <p class="text-white font-black text-xl">~3–4 leady</p>
-        </div>
-        <div class="bg-brand-mid border border-white/10 rounded-2xl px-6 py-5 flex flex-col gap-2">
-          <span class="text-gray-500 text-xs font-bold uppercase tracking-wider">Na 1 pewną umowę</span>
-          <p class="text-gray-300 font-black text-xl">~30 kontaktów</p>
-          <p class="text-gray-500 text-sm">(3 spotkania, brak gwarancji domknięcia)</p>
-        </div>
-
-      </div>
-
-      <p class="text-center text-gray-500 text-sm italic mt-8">
-        „To nie jest kwestia tego, kto jest lepszym sprzedawcą — to kwestia tego, do kogo dzwonisz."
-      </p>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       CO ROBIMY DLA BIUR NIERUCHOMOŚCI
-  ============================================================ -->
-  <section id="uslugi" class="bg-white py-20 fade-in-section">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
-          Kompleksowe wsparcie dla biura nieruchomości
-        </h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Meta Ads, Google Ads, lejki i automatyzacje — dla każdego obszaru działalności Twojego biura.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-        <!-- Klienci sprzedający -->
-        <div class="border border-gray-100 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition-shadow">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-          </div>
-          <h3 class="font-black text-brand-dark text-base">Klienci sprzedający</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Kampanie pozyskujące właścicieli nieruchomości gotowych na podpisanie umowy na wyłączność.</p>
-        </div>
-
-        <!-- Klienci kupujący -->
-        <div class="border border-gray-100 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition-shadow">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-          <h3 class="font-black text-brand-dark text-base">Klienci kupujący</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Leady od osób aktywnie szukających nieruchomości do zakupu na Twoim rynku.</p>
-        </div>
-
-        <!-- Rekrutacja agentów -->
-        <div class="border border-gray-100 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition-shadow">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          <h3 class="font-black text-brand-dark text-base">Rekrutacja agentów</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Kampanie wspierające budowanie zespołu — docieramy do osób doświadczonych w nieruchomościach.</p>
-        </div>
-
-        <!-- Google Ads -->
-        <div class="border border-gray-100 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition-shadow">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-          <h3 class="font-black text-brand-dark text-base">Google Ads</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Kampanie w wyszukiwarce dla biur chcących być widocznym w momencie, gdy klient szuka agenta.</p>
-        </div>
-
-        <!-- Zarządzanie najmem -->
-        <div class="border border-gray-100 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition-shadow">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-            </svg>
-          </div>
-          <h3 class="font-black text-brand-dark text-base">Zarządzanie najmem</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Pozyskiwanie właścicieli zainteresowanych oddaniem nieruchomości w zarządzanie.</p>
-        </div>
-
-        <!-- Wynajmujący -->
-        <div class="border border-gray-100 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition-shadow">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-            </svg>
-          </div>
-          <h3 class="font-black text-brand-dark text-base">Wynajmujący</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Kampanie do właścicieli szukających najemców — szybsze zapełnienie portfela.</p>
-        </div>
-
-        <!-- Inwestycje deweloperskie -->
-        <div class="border border-gray-100 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition-shadow">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-          </div>
-          <h3 class="font-black text-brand-dark text-base">Inwestycje deweloperskie</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Promocja projektów deweloperskich i pozyskiwanie kupujących na nowe inwestycje.</p>
-        </div>
-
-        <!-- Nieruchomości za granicą -->
-        <div class="border border-gray-100 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition-shadow">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="font-black text-brand-dark text-base">Nieruchomości za granicą</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Kampanie pozyskujące polskich kupujących zainteresowanych nieruchomościami poza granicami kraju.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       5. SOCIAL PROOF — filmy + opinie
-  ============================================================ -->
-  <section id="wyniki" class="bg-gray-50 py-20 fade-in-section">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
-        <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
-          Wyniki mówią same za siebie
-        </h2>
-        <p class="text-gray-500 text-lg">Posłuchaj, co mówią właściciele biur, którzy już korzystają z naszego systemu.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6 mb-14">
-
-        <div>
-          <div class="yt-wrapper yt-lazy" data-videoid="9SzxkG5YioY" style="cursor:pointer;">
-            <img src="https://img.youtube.com/vi/9SzxkG5YioY/hqdefault.jpg" alt="Opinia klienta" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" />
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-              <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="yt-wrapper yt-lazy" data-videoid="Zzghsi8MwtU" style="cursor:pointer;">
-            <img src="https://img.youtube.com/vi/Zzghsi8MwtU/hqdefault.jpg" alt="Opinia klienta" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" />
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-              <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="yt-wrapper yt-lazy" data-videoid="_yhVZ27_udU" style="cursor:pointer;">
-            <img src="https://img.youtube.com/vi/_yhVZ27_udU/hqdefault.jpg" alt="Opinia klienta" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" />
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-              <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-
-        <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm flex flex-col gap-4">
-          <div class="flex gap-1 text-yellow-400 text-lg">★★★★★</div>
-          <p class="text-gray-700 text-base leading-relaxed italic">
-            „Zdecydowanie polecamy współpracę z LTTT Media! To świetnie zorganizowany zespół specjalistów, w pełni skoncentrowany na rozwiązaniach. Skupiają się na celach i potrzebach Klientów, wykazując ogromną cierpliwość i wyrozumiałość. Skuteczność oraz wysoka jakość obsługi klienta to ich najmocniejsze strony."
-          </p>
-          <div class="flex items-center gap-3 mt-auto pt-2 border-t border-gray-100">
-            <div class="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-              RI
-            </div>
-            <div>
-              <p class="font-bold text-gray-900 text-sm">Biuro Nieruchomości RE/MAX Impact</p>
-              <p class="text-gray-400 text-xs">Opinia Google</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm flex flex-col gap-4">
-          <div class="flex gap-1 text-yellow-400 text-lg">★★★★★</div>
-          <p class="text-gray-700 text-base leading-relaxed italic">
-            „Dzięki współpracy przez 1 miesiąc mam pracy na kilka miesięcy — LTTT Media pozyskało dla mnie ponad 60 leadów od klientów chętnych do sprzedaży swoich nieruchomości. Wyniki kampanii przerosły moje oczekiwania wielokrotnie. Ze 100% pewnością polecam! 6 gwiazdek na 5 możliwych!"
-          </p>
-          <div class="flex items-center gap-3 mt-auto pt-2 border-t border-gray-100">
-            <div class="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-              AB
-            </div>
-            <div>
-              <p class="font-bold text-gray-900 text-sm">Artur Buchowicz</p>
-              <p class="text-gray-400 text-xs">Opinia Google</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       PARTNERSKA WSPÓŁPRACA
-  ============================================================ -->
-  <section id="wspolpraca" class="bg-white py-20 fade-in-section">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
-          Jak wygląda praca z nami
-        </h2>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto">Transparentna, partnerska współpraca — bez ukrytych kosztów, bez zaskoczeń.</p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-6 mb-10">
-
-        <div class="bg-brand-dark rounded-2xl p-7 flex flex-col gap-3">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/20 flex items-center justify-center flex-shrink-0">
-            <span class="text-brand-accent text-2xl">👁</span>
-          </div>
-          <h3 class="text-white font-black text-xl">Pełna transparentność</h3>
-          <p class="text-gray-400 leading-relaxed">Masz dostęp do dashboardu z wynikami kampanii w czasie rzeczywistym. Wiesz, ile kosztuje każdy lead i skąd pochodzi.</p>
-        </div>
-
-        <div class="bg-brand-dark rounded-2xl p-7 flex flex-col gap-3">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/20 flex items-center justify-center flex-shrink-0">
-            <span class="text-brand-accent text-2xl">⚡</span>
-          </div>
-          <h3 class="text-white font-black text-xl">Szybkie wdrożenie</h3>
-          <p class="text-gray-400 leading-relaxed">Pierwsze kampanie uruchamiamy w 7–14 dni. Nie czekasz miesiącami — system zaczyna działać od razu.</p>
-        </div>
-
-        <div class="bg-brand-dark rounded-2xl p-7 flex flex-col gap-3">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/20 flex items-center justify-center flex-shrink-0">
-            <span class="text-brand-accent text-2xl">🔄</span>
-          </div>
-          <h3 class="text-white font-black text-xl">System 24/7</h3>
-          <p class="text-gray-400 leading-relaxed">Automatyzacje i kampanie pracują bez Twojej obecności — leady spływają nawet wtedy, gdy Ty jesteś na spotkaniach.</p>
-        </div>
-
-        <div class="bg-brand-dark rounded-2xl p-7 flex flex-col gap-3">
-          <div class="w-11 h-11 rounded-xl bg-brand-accent/20 flex items-center justify-center flex-shrink-0">
-            <span class="text-brand-accent text-2xl">📈</span>
-          </div>
-          <h3 class="text-white font-black text-xl">Ciągła optymalizacja</h3>
-          <p class="text-gray-400 leading-relaxed">Co miesiąc analizujemy wyniki i wdrażamy zmiany. Kampanie stają się coraz skuteczniejsze — im dłużej współpracujemy, tym lepsze efekty.</p>
-        </div>
-
-      </div>
-
-      <div class="text-center">
-        <button
-          onclick="openPopup()"
-          class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-base px-8 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
-        >
-          Sprawdź wolne miejsce →
-        </button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       6. FAQ
-  ============================================================ -->
-  <section id="faq" class="bg-white py-20 fade-in-section">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-black text-brand-dark mb-4">
-          Najczęstsze pytania
-        </h2>
-      </div>
-
-      <div class="space-y-3" id="faq-list">
-
-        <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
-          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
-            <span>Ile to kosztuje?</span>
-            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-gray-600 leading-relaxed">
-              Minimalny budżet reklamowy to 3000 zł miesięcznie, do tego dochodzi nasza obsługa. Dokładne koszty omawiamy na rozmowie — chcemy żebyś wiedział dokładnie, ile inwestujesz i co z tego wynika.
-            </p>
-          </div>
-        </div>
-
-        <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
-          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
-            <span>Czy to działa w moim mieście?</span>
-            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-gray-600 leading-relaxed">
-              Pracujemy z biurami w całej Polsce — zarówno w dużych miastach, jak i mniejszych miejscowościach. Na rozmowie ocenimy potencjał Twojego rynku.
-            </p>
-          </div>
-        </div>
-
-        <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
-          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
-            <span>Co jeśli kampania nie przyniesie efektów?</span>
-            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-gray-600 leading-relaxed">
-              Na bieżąco optymalizujemy kampanie i masz pełny wgląd w wyniki. Jeśli coś nie działa — szukamy rozwiązania. Nie chowamy się za umowami.
-            </p>
-          </div>
-        </div>
-
-        <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
-          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
-            <span>Jak długo trwa wdrożenie?</span>
-            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-gray-600 leading-relaxed">
-              Pierwsze kampanie uruchamiamy zazwyczaj w ciągu 7–14 dni od rozpoczęcia współpracy.
-            </p>
-          </div>
-        </div>
-
-        <div class="accordion-item border border-gray-200 rounded-2xl overflow-hidden">
-          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors" aria-expanded="false">
-            <span>Na jak długo podpisujemy umowę?</span>
-            <span class="accordion-icon text-brand-accent text-xl font-black flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="accordion-content">
-            <p class="px-6 pb-5 text-gray-600 leading-relaxed">
-              Współpracujemy na umowach minimum 3-miesięcznych. To optymalny czas, żeby kampanie zdążyły się rozgrzać, zoptymalizować i dostarczyć pełne efekty.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="mt-10 text-center">
-        <button
-          onclick="openPopup()"
-          class="inline-flex items-center gap-2 bg-brand-accent hover:bg-blue-500 text-white font-black text-base px-7 py-3.5 rounded-xl transition-colors duration-200"
-        >
-          Zostaw dane — oddzwonimy →
-        </button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       7. BOTTOM CTA
-  ============================================================ -->
-  <section id="formularz-bottom" class="bg-brand-dark fade-in-section">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
-      <h2 class="text-3xl sm:text-4xl font-black text-white mb-6">
-        Przyjmujemy maks. 5 nowych biur miesięcznie
-      </h2>
-
-      <ul class="text-left inline-block text-gray-300 space-y-3 mb-8">
-        <li class="flex items-start gap-3">
-          <span class="text-green-400 font-black flex-shrink-0 mt-0.5">✓</span>
-          <span>Kampanie Meta Ads i Google Ads wyłącznie dla biur nieruchomości</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-green-400 font-black flex-shrink-0 mt-0.5">✓</span>
-          <span>Automatyzacje i lejki, które kwalifikują leady 24/7</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-green-400 font-black flex-shrink-0 mt-0.5">✓</span>
-          <span>Pełna transparentność — wiesz, za co płacisz</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-green-400 font-black flex-shrink-0 mt-0.5">✓</span>
-          <span>Wdrożenie w 7–14 dni od podpisania umowy</span>
-        </li>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Seller Access · START 30</div>
+      <h1>20 kontaktów do właścicieli w 30 dni. Albo pracujemy dalej bez wynagrodzenia.</h1>
+      <p class="lead">Stały dopływ zgłoszeń od właścicieli mieszkań, domów i działek z Twojego regionu, którzy rozważają sprzedaż. Ty prowadzisz rozmowę i podpisujesz umowę.</p>
+      <ul class="checks">
+        <li>Zgłoszenie trafia do Twojego biura w kilka minut</li>
+        <li>Twoje miasto i okolica w promieniu ok. 40 km</li>
+        <li>Start w ciągu 5 dni roboczych od otrzymania materiałów</li>
       </ul>
-
-      <button
-        onclick="openPopup()"
-        class="w-full sm:w-auto inline-flex items-center justify-center bg-brand-accent hover:bg-blue-500 text-white font-black text-lg px-10 py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/25"
-      >
-        Sprawdź wolne miejsce →
-      </button>
-      <p class="mt-4 text-gray-500 text-sm">Oddzwaniamy w ciągu 24h roboczych. Zero zobowiązań.</p>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       8. FOOTER
-  ============================================================ -->
-  <footer class="bg-brand-darker border-t border-white/5 py-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
-
-        <div class="text-center md:text-left">
-          <div class="flex flex-col mb-2">
-            <span class="text-white font-black text-xl tracking-widest">LTTT MEDIA</span>
-            <span class="text-brand-accent text-xs font-semibold tracking-widest uppercase">Lead To The Top</span>
-          </div>
-          <p class="text-gray-500 text-sm">Lead To The Top Sp. z o.o.</p>
-          <p class="text-gray-600 text-xs mt-1">Plac Bankowy 2, 00-095 Warszawa</p>
-        </div>
-
-        <div class="text-center md:text-left">
-          <p class="text-gray-300 font-semibold mb-2">Kontakt</p>
-          <a href="tel:511205230" class="block text-gray-400 hover:text-white transition-colors text-sm mb-1">
-            📞 511 205 230
-          </a>
-          <a href="mailto:kontakt@ltttmedia.pl" class="block text-gray-400 hover:text-white transition-colors text-sm">
-            ✉️ kontakt@ltttmedia.pl
-          </a>
-        </div>
-
-        <div class="flex items-center gap-4">
-          <a href="https://www.instagram.com/ltttmedia/" target="_blank" rel="noopener" aria-label="Instagram LTTT MEDIA"
-            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-accent/20 flex items-center justify-center transition-colors group">
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
-
-          <a href="https://www.facebook.com/profile.php?id=61555868486029" target="_blank" rel="noopener" aria-label="Facebook LTTT MEDIA"
-            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-accent/20 flex items-center justify-center transition-colors group">
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-          </a>
-
-          <a href="https://www.youtube.com/@LTTTMEDIA" target="_blank" rel="noopener" aria-label="YouTube LTTT MEDIA"
-            class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-accent/20 flex items-center justify-center transition-colors group">
-            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
-          </a>
-        </div>
-
-      </div>
-
-      <div class="border-t border-white/5 mt-10 pt-6 text-center">
-        <p class="text-gray-600 text-sm">
-          © 2026 LTTT MEDIA | Lead To The Top Sp. z o.o.
-        </p>
+      <div class="ctas">
+        <a class="btn" href="#cena">Zobacz cenę i gwarancję</a>
+        <a class="btn ghost" href="#jak-dziala">Jak to działa</a>
       </div>
     </div>
-  </footer>
-
-
-  <!-- ============================================================
-     POP-UP
-============================================================ -->
-<div id="popup-overlay" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden" style="background:rgba(0,0,0,0.7);">
-  <div id="popup-box" class="bg-brand-dark border border-white/10 rounded-2xl w-full max-w-md p-8 relative" style="opacity:0;transform:scale(0.95);transition:opacity 0.2s ease,transform 0.2s ease;">
-
-    <!-- Zamknij -->
-    <button id="close-popup-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
-
-    <!-- Nagłówek -->
-    <h3 class="text-white font-black text-2xl mb-2">Zostaw dane — oddzwonimy w ciągu 24h</h3>
-    <p class="text-gray-400 text-sm mb-6">Zero zobowiązań. Sprawdzimy Twój rynek i powiemy wprost czy możemy pomóc.</p>
-
-    <!-- Formularz -->
-    <div id="popup-form-wrapper">
-      <form id="popup-form" novalidate class="space-y-4">
-
-        <div>
-          <label for="popup-fullName" class="block text-sm font-semibold text-gray-300 mb-1.5">Imię i nazwisko <span class="text-brand-accent">*</span></label>
-          <input type="text" id="popup-fullName" name="fullName" autocomplete="name" placeholder="Jan Kowalski"
-            class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors" />
-          <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz imię i nazwisko.</p>
-        </div>
-
-        <div>
-          <label for="popup-email" class="block text-sm font-semibold text-gray-300 mb-1.5">Adres email <span class="text-brand-accent">*</span></label>
-          <input type="email" id="popup-email" name="email" autocomplete="email" placeholder="jan@biuro.pl"
-            class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors" />
-          <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny adres email.</p>
-        </div>
-
-        <div>
-          <label for="popup-phone" class="block text-sm font-semibold text-gray-300 mb-1.5">Numer telefonu <span class="text-brand-accent">*</span></label>
-          <input type="tel" id="popup-phone" name="phone" autocomplete="tel" placeholder="np. 500 100 200"
-            class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors" />
-          <p class="error-msg text-red-400 text-sm mt-1 hidden">Podaj poprawny polski numer telefonu (9 cyfr).</p>
-        </div>
-
-        <div>
-          <label for="popup-city" class="block text-sm font-semibold text-gray-300 mb-1.5">Miasto / region <span class="text-brand-accent">*</span></label>
-          <input type="text" id="popup-city" name="city" autocomplete="address-level2" placeholder="np. Warszawa, Mazowsze"
-            class="w-full bg-brand-mid border border-white/15 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-accent transition-colors" />
-          <p class="error-msg text-red-400 text-sm mt-1 hidden">Wpisz miasto lub region.</p>
-        </div>
-
-        <button type="submit" id="popup-submit-btn"
-          class="w-full bg-brand-accent hover:bg-blue-500 text-white font-black text-lg py-4 rounded-xl transition-colors duration-200 shadow-lg shadow-blue-500/20 mt-2">
-          Sprawdź wolne miejsce →
-        </button>
-
-        <p class="text-center text-gray-500 text-xs">Przesyłając formularz, wyrażasz zgodę na kontakt telefoniczny w celu omówienia współpracy.</p>
-      </form>
-    </div>
-
-    <div id="popup-success" class="hidden text-center py-8">
-      <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-        <span class="text-green-400 text-3xl">✓</span>
+    <div class="video">
+      <!-- WIDEO: podmień src na link do osadzenia (Vimeo / Loom / YouTube) i usuń blok .ph -->
+      <!-- <iframe class="frame" src="https://player.vimeo.com/video/XXXXXXX" allow="autoplay; fullscreen" allowfullscreen title="Seller Access w 3 minuty"></iframe> -->
+      <div class="ph">
+        <div class="play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+        <div><b style="color:#fff">Seller Access w niecałe 3 minuty</b><br>Tu pojawi się wideo</div>
       </div>
-      <h3 class="text-white font-black text-xl mb-2">Dziękujemy!</h3>
-      <p class="text-gray-400">Oddzwonimy w ciągu 15 minut.</p>
+      <div class="cap"><b>Przed spotkaniem:</b> zobacz, co dostajesz, ile to kosztuje i co zrobimy na rozmowie. Wideo nie jest obowiązkowe — wszystko jest też opisane niżej.</div>
     </div>
-
   </div>
-</div>
+</section>
 
+<!-- PROBLEM -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Wyzwanie</div>
+    <h2>Nowe oferty nie powinny zależeć od szczęścia.</h2>
+    <p class="lead">Polecenia, ogłoszenia prywatne, własna sieć kontaktów — każde z tych źródeł działa, ale żadnego nie da się włączyć wtedy, gdy biuro potrzebuje nowych ofert.</p>
+    <div class="grid g3" style="margin-top:40px">
+      <div class="card"><h3>Polecenia przychodzą nieregularnie</h3><p>Jeden miesiąc jest pełny, następny pusty. Nie da się ich zaplanować ani zwiększyć na żądanie.</p></div>
+      <div class="card"><h3>Ogłoszenia prywatne to rozmowa od odmowy</h3><p>Właściciel odbiera kilkanaście telefonów od biur. Twój agent jest kolejnym z nich.</p></div>
+      <div class="card"><h3>Agenci szukają zamiast sprzedawać</h3><p>Czas spędzony na zdobywaniu ofert to czas, którego brakuje na obsługę i finalizację transakcji.</p></div>
+    </div>
+  </div>
+</section>
 
-  <!-- ============================================================
-       JAVASCRIPT
-  ============================================================ -->
-  <script>
-    // Zawsze zaczynaj od góry — usuń hash z URL przy załadowaniu
-    if (window.location.hash) {
-      history.replaceState(null, null, window.location.pathname + window.location.search);
-    }
-    window.scrollTo(0, 0);
+<!-- JAK DZIAŁA -->
+<section class="soft" id="jak-dziala">
+  <div class="wrap">
+    <div class="eyebrow">Jak to działa</div>
+    <h2>Właściciele sami zgłaszają, że rozważają sprzedaż.</h2>
+    <p class="lead">Docieramy do właścicieli nieruchomości w Twoim obszarze z konkretną propozycją: bezpłatna wycena, pomoc w uzyskaniu lepszej ceny, wsparcie w formalnościach. Osoba zainteresowana zostawia kontakt i odpowiada na kilka pytań o nieruchomość.</p>
+    <div class="grid g4 steps" style="margin-top:40px">
+      <div class="step"><h3>Rozmowa startowa</h3><p>30 minut. Ustalamy obszar, typy nieruchomości, przekazy i sposób obsługi zgłoszeń.</p></div>
+      <div class="step"><h3>Uruchomienie</h3><p>Do 5 dni roboczych od otrzymania materiałów. Ty akceptujesz przekazy, my robimy resztę.</p></div>
+      <div class="step"><h3>Zgłoszenia na bieżąco</h3><p>Każdy kontakt trafia na e-mail i do arkusza, z odpowiedziami właściciela.</p></div>
+      <div class="step"><h3>Raport i decyzja</h3><p>Raport po 14 dniach i rozmowa podsumowująca przed końcem 30 dni.</p></div>
+    </div>
+    <div class="note"><b>Twoja rola:</b> szybki kontakt ze zgłoszeniem i rozmowa z właścicielem. Dostajesz od nas scenariusz pierwszej rozmowy i prosty standard obsługi zgłoszeń, bo czas reakcji decyduje o tym, ile zgłoszeń zamieni się w spotkania.</div>
+  </div>
+</section>
 
-    // Smooth scroll tylko dla kliknięć w linki z hashem
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
+<!-- WYNIKI -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Wyniki</div>
+    <h2>Wyniki biur, które pracują w tym modelu.</h2>
+    <div class="grid g3" style="margin-top:40px">
+      <div class="card"><div class="k">10</div><h3 style="margin-top:14px">umów na wyłączność w pierwszym miesiącu</h3><p>6 z tych nieruchomości zostało sprzedanych w ciągu kolejnych 2 miesięcy.</p><div class="who">Artur · Wrocław</div></div>
+      <div class="card"><div class="k">7</div><h3 style="margin-top:14px">umów na wyłączność w 18 dni</h3><p>Od startu kampanii do podpisanych umów pośrednictwa.</p><div class="who">Łukasz · Polska północno-zachodnia</div></div>
+      <div class="card"><div class="k">3</div><h3 style="margin-top:14px">umowy na wyłączność w 24 godziny</h3><p>Trzy podpisane umowy pośrednictwa w ciągu jednej doby.</p><div class="who">Olaf · Warszawa</div></div>
+    </div>
+    <div class="stats">
+      <div><b>200+</b>biur nieruchomości obsłużonych przez LTTT MEDIA</div>
+      <div><b>850+</b>umów na wyłączność pozyskanych przez naszych klientów w 2025 r.</div>
+      <div><b>100%</b>specjalizacji w nieruchomościach</div>
+    </div>
+    <p class="fine">Przedstawione wyniki są indywidualnymi wynikami historycznymi klientów i nie stanowią gwarancji ich powtórzenia. Liczba podpisanych umów zależy od pracy zespołu biura.</p>
+  </div>
+</section>
 
-    // ---- Navbar scrolled shadow ----
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
+<!-- GWARANCJA -->
+<section class="dark" id="gwarancja">
+  <div class="wrap">
+    <div class="eyebrow">Gwarancja</div>
+    <h2>Minimum 20 kontaktów w 30 dni. Inaczej pracujemy dalej bez wynagrodzenia.</h2>
+    <p class="lead">Jeśli w ciągu 30 dni od startu kampanii nie dostarczymy 20 kwalifikowanych kontaktów, prowadzimy kampanię dalej bez wynagrodzenia, aż je dostarczymy — maksymalnie przez kolejne 30 dni. W tym czasie finansujesz tylko budżet reklamowy, proporcjonalny do brakującej liczby kontaktów.</p>
+    <div class="grid g3" style="margin-top:40px">
+      <div class="gcard"><h3>Kontakt kwalifikowany</h3><p>Właściciel nieruchomości z Twojego obszaru, który zadeklarował, że rozważa sprzedaż, i zostawił prawidłowy numer telefonu.</p></div>
+      <div class="gcard"><h3>Błędny kontakt? Zgłoś go</h3><p>Masz 5 dni roboczych na zgłoszenie błędnego kontaktu. Uznany nie liczy się do gwarancji. Duplikaty liczymy raz.</p></div>
+      <div class="gcard"><h3>Liczymy od startu</h3><p>30 dni biegnie od pierwszej emisji reklam, potwierdzonej e-mailem. Twoje opóźnienia przesuwają termin, nie odbierają gwarancji.</p></div>
+    </div>
+    <p class="fine">Gwarancja dotyczy liczby kontaktów. Umowy pośrednictwa i transakcje zależą od rozmów prowadzonych przez Twoje biuro. Pełne warunki są częścią umowy.</p>
+  </div>
+</section>
 
-    // ---- IntersectionObserver — fade-in ----
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-      }),
-      { threshold: 0.12 }
-    );
-    document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+<!-- CENA -->
+<section id="cena">
+  <div class="wrap">
+    <div class="eyebrow">Cena</div>
+    <h2>Jedna cena. Jasne zasady.</h2>
+    <div class="price-wrap">
+      <div class="price-main">
+        <span class="tag">START 30</span>
+        <div class="amount">3 000 zł <small>netto</small></div>
+        <div style="color:var(--muted);font-size:15px">wdrożenie + pierwsze 30 dni obsługi, płatne z góry</div>
+        <ul>
+          <li>Wdrożenie: obszar, grupa odbiorców, formularz z pytaniami o nieruchomość</li>
+          <li>5 przekazów reklamowych dopasowanych do Twojego rynku</li>
+          <li>Prowadzenie i optymalizacja przez 30 dni od startu</li>
+          <li>Zgłoszenia na bieżąco: e-mail i arkusz ze statusami</li>
+          <li>Scenariusz pierwszej rozmowy i standard obsługi zgłoszeń</li>
+          <li>Raport po 14 dniach i rozmowa podsumowująca</li>
+          <li>Gwarancja minimum 20 kontaktów</li>
+        </ul>
+        <div class="budget"><span>Budżet reklamowy (płatny bezpośrednio do Meta)</span><span>od 3 000 zł / 30 dni</span></div>
+      </div>
+      <div class="card cont">
+        <span class="tag">Po pierwszych 30 dniach</span>
+        <h3>Kontynuacja bez kosztów wdrożenia</h3>
+        <table>
+          <tr><td>Z zobowiązaniem na 90 dni</td><td>2 250 zł netto / 30 dni</td></tr>
+          <tr><td>Bez zobowiązania</td><td>2 500 zł netto / 30 dni</td></tr>
+        </table>
+        <p style="margin-top:16px">O kontynuacji decydujesz na rozmowie podsumowującej, na podstawie danych z kampanii.</p>
+        <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--line)">
+          <span class="tag grey">Poza zakresem</span>
+          <p style="margin-top:0">Dzwonienie do zgłoszeń i rozmowy handlowe, budżet reklamowy, Google Ads, strona internetowa, social media.</p>
+        </div>
+      </div>
+    </div>
+    <p class="fine">Ceny netto, do kwot należy doliczyć 23% VAT.</p>
 
-    // ---- FAQ Accordion ----
-    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const content = trigger.closest('.accordion-item').querySelector('.accordion-content');
-        const icon    = trigger.querySelector('.accordion-icon');
-        const isOpen  = content.classList.contains('open');
+    <!-- KALKULATOR -->
+    <div class="calc" id="kalkulator">
+      <div>
+        <div class="eyebrow">Policz swój próg opłacalności</div>
+        <div class="field">
+          <label for="v">Średnia wartość transakcji</label>
+          <input type="range" id="v" min="200000" max="2000000" step="10000" value="500000">
+          <div class="val" id="vOut"></div>
+        </div>
+        <div class="field">
+          <label for="c">Prowizja biura</label>
+          <input type="range" id="c" min="1" max="5" step="0.1" value="2.5">
+          <div class="val" id="cOut"></div>
+        </div>
+        <p style="font-size:14px">To kalkulacja progu opłacalności, a nie obietnica wyniku. Liczba umów zależy od rozmów prowadzonych przez Twój zespół.</p>
+      </div>
+      <div class="out">
+        <div class="row"><span>Przychód z jednej transakcji</span><b id="rev"></b></div>
+        <div class="row"><span>Koszt pierwszych 30 dni (z budżetem)</span><b>6 000 zł</b></div>
+        <div style="margin-top:18px;color:#C3CEEA;font-size:15px">Jedna transakcja pokrywa koszt pierwszego miesiąca</div>
+        <div class="big" id="ratio"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
-        document.querySelectorAll('.accordion-trigger').forEach(t => {
-          t.setAttribute('aria-expanded', 'false');
-          t.querySelector('.accordion-icon').textContent = '+';
-        });
+<!-- DLA KOGO -->
+<section class="soft">
+  <div class="wrap">
+    <div class="eyebrow">Dopasowanie</div>
+    <h2>Seller Access działa najlepiej, gdy…</h2>
+    <div class="grid g2" style="margin-top:36px">
+      <div class="card">
+        <span class="tag">Dla Ciebie, jeśli</span>
+        <ul class="fit">
+          <li>Działasz w swoim mieście i w promieniu ok. 40 km</li>
+          <li>Obsługujesz mieszkania, domy i działki (także komercję)</li>
+          <li>Pracujesz na umowach na wyłączność lub chcesz na nie przejść</li>
+          <li>Ktoś w biurze oddzwania do nowego zgłoszenia tego samego dnia</li>
+          <li>Planujesz budżet reklamowy na co najmniej 3 miesiące</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag grey">Nie dla Ciebie, jeśli</span>
+        <ul class="fit no">
+          <li>Oczekujesz gwarancji podpisanych umów lub sprzedaży</li>
+          <li>Nie masz kto zadzwonić do zgłoszenia w ciągu doby</li>
+          <li>Zajmujesz się wyłącznie najmem, kupującymi lub rynkiem pierwotnym</li>
+          <li>Chcesz tylko „sprawdzić na dwa tygodnie"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-        if (!isOpen) {
-          content.classList.add('open');
-          trigger.setAttribute('aria-expanded', 'true');
-          icon.textContent = '×';
-        }
-      });
-    });
+<!-- PROCES WSPÓŁPRACY -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Proces współpracy</div>
+    <h2>Od rozmowy do pierwszych zgłoszeń. Bez drukowania dokumentów.</h2>
+    <div class="grid g4 steps" style="margin-top:40px">
+      <div class="step"><h3>Rozmowa i decyzja</h3><p>20 minut. Sprawdzamy Twój obszar i liczymy, czy to się opłaca.</p></div>
+      <div class="step"><h3>Umowa online</h3><p>Podpis elektroniczny w Autenti — dwie minuty, także na telefonie.</p></div>
+      <div class="step"><h3>Faktura i formularz</h3><p>Faktura z płatnością online, potem krótki formularz startowy.</p></div>
+      <div class="step"><h3>Start kampanii</h3><p>Do 5 dni roboczych. Dzień startu potwierdzamy e-mailem — od niego liczymy 30 dni.</p></div>
+    </div>
+  </div>
+</section>
 
-    // ---- YouTube lazy load ----
-    document.querySelectorAll('.yt-lazy').forEach(el => {
-      el.addEventListener('click', () => {
-        const id = el.dataset.videoid;
-        el.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" allowfullscreen allow="autoplay" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>`;
-      });
-    });
+<!-- PRZED SPOTKANIEM -->
+<section class="soft" id="spotkanie">
+  <div class="wrap prep">
+    <div>
+      <div class="eyebrow">Przed spotkaniem</div>
+      <h2>Co zrobimy na rozmowie.</h2>
+      <p class="lead">Rozmowa trwa ok. 20 minut. Nie będziemy omawiać technicznych szczegółów reklam — rozmawiamy o Twoim biurze i Twoim rynku.</p>
+    </div>
+    <div class="card">
+      <ul class="fit">
+        <li>Sprawdzimy, ilu właścicieli możemy zasięgiem objąć na Twoim obszarze</li>
+        <li>Policzymy, ile transakcji potrzebujesz, żeby inwestycja się zwróciła</li>
+        <li>Odpowiemy na Twoje pytania o gwarancję i warunki</li>
+        <li>Jeśli to ma sens, ustalimy termin startu</li>
+      </ul>
+      <p style="margin-top:18px;font-size:15px"><b style="color:var(--ink)">Przygotuj:</b> średnią wartość transakcji, Twoją typową prowizję i liczbę nowych ofert, które pozyskujesz miesięcznie.</p>
+    </div>
+  </div>
+</section>
 
-    // ---- Helpers ----
-    function isValidPolishPhone(val) {
-      return /^(\+48)?[0-9]{9}$/.test(val.replace(/[\s\-]/g, ''));
-    }
-    function isValidEmail(val) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
-    }
-    function showError(field, show) {
-      const msg = field.closest('div').querySelector('.error-msg');
-      field.classList.toggle('invalid', show);
-      if (msg) msg.classList.toggle('hidden', !show);
-    }
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2>Najczęstsze pytania.</h2>
+    <div style="margin-top:28px">
+      <details><summary>Czy gwarantujecie umowy na wyłączność?</summary><p>Nie. Gwarantujemy liczbę kontaktów od właścicieli, którzy rozważają sprzedaż. Umowy zależą od rozmów prowadzonych przez Twoje biuro — dlatego dostajesz od nas scenariusz pierwszej rozmowy i standard obsługi zgłoszeń.</p></details>
+      <details><summary>Co, jeśli kontakty okażą się błędne?</summary><p>Każdy kontakt możesz zgłosić w ciągu 5 dni roboczych z jednego z powodów: numer nie istnieje, osoba nie wypełniała formularza, pośrednik, szuka zakupu lub najmu, nieruchomość poza obszarem albo duplikat. Uznany kontakt nie liczy się do gwarancji.</p></details>
+      <details><summary>Czy budżet reklamowy jest wliczony w cenę?</summary><p>Nie. Budżet od 3 000 zł na 30 dni płacisz bezpośrednio do Meta (Facebook, Instagram) z własnej karty. Dzięki temu masz pełną kontrolę nad wydatkami.</p></details>
+      <details><summary>Jakie typy nieruchomości obejmuje kampania?</summary><p>Mieszkania, domy, działki, a także lokale komercyjne — zgodnie z zakresem Twojego biura. Formularz pyta właściciela o typ nieruchomości.</p></details>
+      <details><summary>Jak szybko ruszamy?</summary><p>Do 5 dni roboczych od otrzymania materiałów i dostępów. 30 dni gwarancji liczymy od pierwszej emisji reklam, nie od dnia płatności.</p></details>
+      <details><summary>Czy muszę podpisać umowę na kilka miesięcy?</summary><p>Nie. START 30 to jeden okres. Po nim wybierasz kontynuację z zobowiązaniem na 90 dni (2 250 zł netto / 30 dni) albo bez zobowiązania (2 500 zł netto / 30 dni).</p></details>
+      <details><summary>Czy pracujecie z biurami w całej Polsce?</summary><p>Tak. Kampania obejmuje Twoje miasto i okolicę w promieniu ok. 40 km. Przed spotkaniem sprawdzamy, czy na Twoim obszarze da się spełnić gwarancję.</p></details>
+    </div>
+  </div>
+</section>
 
-    async function submitFormData(payload, btnEl, wrapperEl, successEl, errorEl) {
-      const formParams = new URLSearchParams(Object.entries(payload).map(([k, v]) =>
-        [k, Array.isArray(v) ? v.join(', ') : v]
-      ));
+<!-- FINAL CTA -->
+<section class="dark final" id="kontakt">
+  <div class="wrap">
+    <div class="eyebrow">Następny krok</div>
+    <h2>Zacznijmy od Twojego obszaru.</h2>
+    <p class="lead">Masz już umówione spotkanie? Do zobaczenia na rozmowie. Jeśli nie — zadzwoń lub napisz, a sprawdzimy, czy Seller Access ma sens dla Twojego biura.</p>
+    <div class="ctas">
+      <a class="btn" href="tel:+48511205230">Zadzwoń: +48 511 205 230</a>
+      <a class="btn ghost" href="mailto:kontakt@ltttmedia.pl?subject=Seller%20Access">kontakt@ltttmedia.pl</a>
+    </div>
+  </div>
+</section>
 
-      btnEl.disabled = true;
-      btnEl.textContent = 'Wysyłanie…';
+<footer>
+  <div class="wrap">
+    <div>Seller Access jest produktem LTTT MEDIA · Lead To The Top Sp. z o.o.<br>Plac Bankowy 2, 00-095 Warszawa</div>
+    <div><a href="tel:+48511205230">+48 511 205 230</a> · <a href="mailto:kontakt@ltttmedia.pl">kontakt@ltttmedia.pl</a><br>© 2026 LTTT MEDIA</div>
+  </div>
+</footer>
 
-      try {
-        await Promise.allSettled([
-          fetch('https://services.leadconnectorhq.com/hooks/7hpPSc5SQgIWDCqEHtgF/webhook-trigger/7d9116c4-d499-42b8-a05f-975f13d02982', {
-            method: 'POST',
-            body: formParams,
-          }),
-          fetch('https://hooks.zapier.com/hooks/catch/19282604/4ygqjo0/', {
-            method: 'POST',
-            body: formParams,
-          }),
-        ]);
-        if (typeof fbq === 'function') fbq('track', 'Lead');
-        wrapperEl.classList.add('hidden');
-        successEl.classList.remove('hidden');
-      } catch (_) {
-        wrapperEl.classList.add('hidden');
-        errorEl.classList.remove('hidden');
-      }
-    }
-
-    // ---- Pop-up ----
-    function openPopup() {
-      const overlay = document.getElementById('popup-overlay');
-      const box = document.getElementById('popup-box');
-      overlay.classList.remove('hidden');
-      requestAnimationFrame(() => {
-        box.style.opacity = '1';
-        box.style.transform = 'scale(1)';
-      });
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closePopup() {
-      const overlay = document.getElementById('popup-overlay');
-      const box = document.getElementById('popup-box');
-      box.style.opacity = '0';
-      box.style.transform = 'scale(0.95)';
-      setTimeout(() => {
-        overlay.classList.add('hidden');
-        document.body.style.overflow = '';
-      }, 200);
-    }
-
-    document.getElementById('close-popup-btn').addEventListener('click', closePopup);
-    document.getElementById('popup-overlay').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('popup-overlay')) closePopup();
-    });
-
-    // Pop-up form submit
-    const popupForm = document.getElementById('popup-form');
-    const popupFormWrapper = document.getElementById('popup-form-wrapper');
-    const popupSuccess = document.getElementById('popup-success');
-
-    popupForm.querySelectorAll('input').forEach(el => {
-      el.addEventListener('input', () => showError(el, false));
-      el.addEventListener('change', () => showError(el, false));
-    });
-
-    popupForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      let valid = true;
-
-      const fullName = document.getElementById('popup-fullName');
-      const email    = document.getElementById('popup-email');
-      const phone    = document.getElementById('popup-phone');
-      const city     = document.getElementById('popup-city');
-
-      if (!fullName.value.trim())         { showError(fullName, true); valid = false; }
-      if (!isValidEmail(email.value))     { showError(email, true);    valid = false; }
-      if (!isValidPolishPhone(phone.value)) { showError(phone, true);  valid = false; }
-      if (!city.value.trim())             { showError(city, true);      valid = false; }
-
-      if (!valid) return;
-
-      const payload = {
-        first_name: fullName.value.trim().split(' ')[0],
-        email:      email.value.trim(),
-        phone:      phone.value.trim(),
-        city:       city.value.trim(),
-      };
-
-      const btn = document.getElementById('popup-submit-btn');
-      btn.disabled = true;
-      btn.textContent = 'Wysyłanie…';
-
-      const formParams = new URLSearchParams(Object.entries(payload));
-      await Promise.allSettled([
-        fetch('https://services.leadconnectorhq.com/hooks/7hpPSc5SQgIWDCqEHtgF/webhook-trigger/7d9116c4-d499-42b8-a05f-975f13d02982', { method: 'POST', body: formParams }),
-        fetch('https://hooks.zapier.com/hooks/catch/19282604/4ygqjo0/', { method: 'POST', body: formParams }),
-      ]);
-
-      if (typeof fbq === 'function') fbq('track', 'Lead');
-      popupFormWrapper.classList.add('hidden');
-      popupSuccess.classList.remove('hidden');
-    });
-
-    // Odblokuj scroll i wróć na górę po załadowaniu strony
-    window.addEventListener('load', () => {
-      window.scrollTo(0, 0);
-      const el = document.getElementById('init-no-scroll');
-      if (el) el.remove();
-    });
-  </script>
-
+<script>
+(function(){
+  var v=document.getElementById('v'),c=document.getElementById('c');
+  var fmt=function(n){return Math.round(n).toLocaleString('pl-PL').replace(/,/g,' ')+' zł'};
+  function upd(){
+    var val=+v.value,com=+c.value,rev=val*com/100;
+    document.getElementById('vOut').textContent=fmt(val);
+    document.getElementById('cOut').textContent=com.toFixed(1).replace('.',',')+'%';
+    document.getElementById('rev').textContent=fmt(rev);
+    document.getElementById('ratio').textContent=(rev/6000).toFixed(1).replace('.',',')+'×';
+  }
+  v.addEventListener('input',upd);c.addEventListener('input',upd);upd();
+})();
+</script>
 </body>
 </html>
