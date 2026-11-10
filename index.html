@@ -146,6 +146,22 @@ details p{color:var(--muted);margin-top:12px;font-size:15.5px;max-width:820px}
 .final h2{margin:0 auto}
 .final .lead{margin:16px auto 0}
 .final .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+/* promo bar */
+.promo-bar{background:linear-gradient(135deg,#0d2a5e 0%,#1a3d7a 100%);border:1.5px solid #2F6BFF;border-radius:16px;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.promo-badge{display:inline-block;background:#2F6BFF;color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-right:12px;white-space:nowrap}
+.promo-text{color:#C3CEEA;font-size:16px}
+.promo-text s{color:#7EA3FF;opacity:.7}
+.promo-text strong{color:#fff}
+.promo-timer{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.promo-unit{display:flex;flex-direction:column;align-items:center;background:rgba(0,0,0,.3);border-radius:10px;padding:8px 12px;min-width:52px}
+.promo-unit span{font-size:22px;font-weight:800;color:#fff;line-height:1}
+.promo-unit small{font-size:10px;color:#7EA3FF;text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
+.promo-sep{font-size:20px;font-weight:800;color:#2F6BFF;margin-bottom:14px}
+.amount-wrap{margin-top:6px}
+.amount-old{font-size:22px;font-weight:600;color:var(--muted);text-decoration:line-through;letter-spacing:-.01em}
+@media(max-width:700px){.promo-bar{flex-direction:column;align-items:flex-start}}
+@media(max-width:520px){.promo-bar{padding:16px 18px}.promo-unit{min-width:42px;padding:7px 9px}.promo-unit span{font-size:18px}.promo-text{font-size:14.5px}}
+
 footer{background:#081430;color:#8FA3D1;font-size:14px;padding:40px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer a{color:#C3CEEA;text-decoration:none}
@@ -310,10 +326,31 @@ footer a{color:#C3CEEA;text-decoration:none}
   <div class="wrap">
     <div class="eyebrow">Cena</div>
     <h2>Jedna cena. Jasne zasady.</h2>
+
+    <!-- OFERTA LIMITOWANA -->
+    <div class="promo-bar">
+      <div class="promo-left">
+        <span class="promo-badge">Oferta limitowana</span>
+        <span class="promo-text">Cena <s>3 900 zł</s> <strong>3 000 zł netto</strong> — ważna do <strong>15 grudnia 2026</strong></span>
+      </div>
+      <div class="promo-timer" id="promo-timer">
+        <div class="promo-unit"><span id="pt-d">--</span><small>dni</small></div>
+        <div class="promo-sep">:</div>
+        <div class="promo-unit"><span id="pt-h">--</span><small>godz</small></div>
+        <div class="promo-sep">:</div>
+        <div class="promo-unit"><span id="pt-m">--</span><small>min</small></div>
+        <div class="promo-sep">:</div>
+        <div class="promo-unit"><span id="pt-s">--</span><small>sek</small></div>
+      </div>
+    </div>
+
     <div class="price-wrap">
       <div class="price-main">
         <span class="tag">START 30</span>
-        <div class="amount">3 000 zł <small>netto</small></div>
+        <div class="amount-wrap">
+          <div class="amount-old">3 900 zł <small>netto</small></div>
+          <div class="amount">3 000 zł <small>netto</small></div>
+        </div>
         <div style="color:var(--muted);font-size:15px">wdrożenie + pierwsze 30 dni obsługi, płatne z góry</div>
         <ul>
           <li>Wdrożenie: obszar, grupa odbiorców, formularz z pytaniami o nieruchomość</li>
@@ -480,6 +517,27 @@ footer a{color:#C3CEEA;text-decoration:none}
     document.getElementById('ratio').textContent=(rev/6000).toFixed(1).replace('.',',')+'×';
   }
   v.addEventListener('input',upd);c.addEventListener('input',upd);upd();
+})();
+
+(function(){
+  var end=new Date('2026-12-15T23:59:59');
+  function tick(){
+    var now=new Date(),diff=end-now;
+    if(diff<=0){
+      document.getElementById('promo-timer').innerHTML='<span style="color:#7EA3FF;font-size:14px">Oferta wygasła</span>';
+      return;
+    }
+    var d=Math.floor(diff/864e5),
+        h=Math.floor((diff%864e5)/36e5),
+        m=Math.floor((diff%36e5)/6e4),
+        s=Math.floor((diff%6e4)/1e3);
+    function pad(n){return n<10?'0'+n:n}
+    document.getElementById('pt-d').textContent=d;
+    document.getElementById('pt-h').textContent=pad(h);
+    document.getElementById('pt-m').textContent=pad(m);
+    document.getElementById('pt-s').textContent=pad(s);
+  }
+  tick();setInterval(tick,1000);
 })();
 </script>
 </body>
