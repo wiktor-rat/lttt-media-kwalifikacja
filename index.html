@@ -58,8 +58,9 @@ header.nav .wrap{display:flex;align-items:center;justify-content:space-between;h
 /* hero */
 .hero{background:var(--navy);color:#fff;padding:72px 0 96px;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;right:-180px;top:-160px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(47,107,255,.85) 0%,rgba(47,107,255,.15) 55%,rgba(47,107,255,0) 70%);pointer-events:none}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-@media(max-width:980px){.hero .wrap{grid-template-columns:1fr}}
+.hero .wrap{position:relative;z-index:1;max-width:860px}
+.hero h1{font-size:clamp(32px,4.5vw,54px)}
+.hero .lead{max-width:640px}
 .hero .lead{color:#C3CEEA}
 .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
 .checks{list-style:none;margin-top:28px;display:grid;gap:10px}
@@ -214,7 +215,7 @@ footer a{color:#C3CEEA;text-decoration:none}
 </head>
 <body>
 
-<div class="topbar">Masz umówione spotkanie? <b>Obejrzyj 3-minutowe wideo poniżej</b> — rozmowa będzie krótsza i konkretna.</div>
+<div class="topbar">Masz umówione spotkanie? <b>Wszystko, co musisz wiedzieć, jest opisane poniżej</b> — rozmowa będzie krótsza i konkretna.</div>
 
 <header class="nav">
   <div class="wrap">
@@ -245,15 +246,6 @@ footer a{color:#C3CEEA;text-decoration:none}
         <a class="btn" href="#cena">Zobacz cenę i gwarancję</a>
         <a class="btn ghost" href="#jak-dziala">Jak to działa</a>
       </div>
-    </div>
-    <div class="video">
-      <!-- WIDEO: podmień src na link do osadzenia (Vimeo / Loom / YouTube) i usuń blok .ph -->
-      <!-- <iframe class="frame" src="https://player.vimeo.com/video/XXXXXXX" allow="autoplay; fullscreen" allowfullscreen title="Seller Access w 3 minuty"></iframe> -->
-      <div class="ph">
-        <div class="play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
-        <div><b style="color:#fff">Seller Access w niecałe 3 minuty</b><br>Tu pojawi się wideo</div>
-      </div>
-      <div class="cap"><b>Przed spotkaniem:</b> zobacz, co dostajesz, ile to kosztuje i co zrobimy na rozmowie. Wideo nie jest obowiązkowe — wszystko jest też opisane niżej.</div>
     </div>
   </div>
 </section>
