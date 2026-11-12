@@ -134,6 +134,12 @@ ul.fit.no li::before{background:none;border:2px solid #B6C1DA;width:6px;height:6
 .prep{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
 @media(max-width:860px){.prep{grid-template-columns:1fr}}
 
+/* youtube grid */
+.yt-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.yt-wrap{border-radius:16px;overflow:hidden;position:relative;padding-top:56.25%;background:#0d1b3e}
+.yt-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:640px){.yt-grid{grid-template-columns:1fr}}
+
 /* faq */
 details{border-bottom:1px solid var(--line);padding:20px 0}
 details summary{list-style:none;cursor:pointer;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px}
@@ -290,6 +296,17 @@ footer a{color:#C3CEEA;text-decoration:none}
       <div class="card"><div class="k">7</div><h3 style="margin-top:14px">umów na wyłączność w 18 dni</h3><p>Od startu kampanii do podpisanych umów pośrednictwa.</p><div class="who">Łukasz · Polska północno-zachodnia</div></div>
       <div class="card"><div class="k">3</div><h3 style="margin-top:14px">umowy na wyłączność w 24 godziny</h3><p>Trzy podpisane umowy pośrednictwa w ciągu jednej doby.</p><div class="who">Olaf · Warszawa</div></div>
     </div>
+    <div class="yt-grid" style="margin-top:40px">
+      <!-- WIDEO 1: zamień VIDEO_ID_1 na ID z YouTube (np. dQw4w9WgXcQ) -->
+      <div class="yt-wrap">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Wynik klienta 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- WIDEO 2: zamień VIDEO_ID_2 na ID z YouTube -->
+      <div class="yt-wrap">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Wynik klienta 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
     <div class="stats">
       <div><b>200+</b>firm z branży nieruchomości zaufało LTTT MEDIA</div>
       <div><b>100%</b>specjalizacji w nieruchomościach</div>
